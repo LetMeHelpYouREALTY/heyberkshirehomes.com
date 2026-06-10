@@ -50,7 +50,6 @@ export default function CommunityListings({ community }: CommunityListingsProps)
           widgetId={`realscout-${community.slug}`}
           priceMin={community.priceMin}
           priceMax={community.priceMax}
-          useIframe={true}
           className="min-h-[600px]"
         />
         <p className="text-sm text-slate text-center mt-4 italic">

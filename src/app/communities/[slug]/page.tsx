@@ -337,7 +337,6 @@ export default async function CommunityPage({
             </div>
           </div>
           <RealScoutWidget
-            useIframe={true}
             className="min-h-[600px]"
           />
           <p className="text-sm text-slate text-center mt-4 italic">

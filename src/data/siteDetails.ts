@@ -1,3 +1,6 @@
+const callActionTrackingPhone =
+  process.env.NEXT_PUBLIC_CALLACTION_TRACKING_PHONE?.trim() || '';
+
 export const siteDetails = {
   siteName: 'HeyBerkshireHomes.com',
   siteUrl: 'https://www.heyberkshirehomes.com',
@@ -8,12 +11,19 @@ export const siteDetails = {
   language: 'en-us',
   locale: 'en-US',
   siteLogo: '/images/logo.png',
-  googleAnalyticsId: '', // Add GA4 ID when available
+  googleAnalyticsId: process.env.NEXT_PUBLIC_GA_ID?.trim() || '',
+
+  tracking: {
+    // Follow Up Boss pixel ID (Widget Tracker) — Admin > Integrations > Pixel
+    fubPixelId: process.env.NEXT_PUBLIC_FUB_PIXEL_ID?.trim() || 'WT-XQHVYQWW',
+  },
   
   // Contact Information
   contact: {
-    primaryPhone: '702-500-1942',
-    professionalPhone: '702-500-1942',
+    // Site-specific CallAction tracking number — set via NEXT_PUBLIC_CALLACTION_TRACKING_PHONE
+    callActionPhone: callActionTrackingPhone,
+    primaryPhone: callActionTrackingPhone || '702-500-1942',
+    professionalPhone: callActionTrackingPhone || '702-500-1942',
     email: 'DrDuffy@HeyBerkshireHomes.com',
     officeAddress: {
       street: '',

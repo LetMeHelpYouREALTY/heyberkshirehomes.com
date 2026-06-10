@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { GoogleAnalytics } from '@next/third-parties/google';
 import { Inter, Manrope } from "next/font/google";
 
@@ -6,8 +7,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FooterHomeValue from "@/components/FooterHomeValue";
 import SimpleSearchSection from "@/components/SimpleSearchSection";
-import RealScoutScript from "@/components/RealScoutScript";
-import WidgetTracker from "@/components/WidgetTracker";
+import FUBPixel from "@/components/FUBPixel";
 import { siteDetails } from '@/data/siteDetails';
 
 import "./globals.css";
@@ -86,10 +86,12 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${manrope.variable} font-sans antialiased`}
       >
-        {/* RealScout Widget Script - Load once globally for all pages */}
-        <RealScoutScript />
-        {/* Widget Tracker - Analytics tracking */}
-        <WidgetTracker />
+        <Script
+          src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
+          type="module"
+          strategy="afterInteractive"
+        />
+        <FUBPixel />
         {siteDetails.googleAnalyticsId && <GoogleAnalytics gaId={siteDetails.googleAnalyticsId} />}
         <Header />
         <main>

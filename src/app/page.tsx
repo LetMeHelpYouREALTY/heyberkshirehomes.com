@@ -2,6 +2,7 @@ import Hero from '@/components/Hero';
 import ServicesSection from '@/components/ServicesSection';
 import CommunitiesSection from '@/components/CommunitiesSection';
 import RealScoutAdvancedSearch from '@/components/RealScoutAdvancedSearch';
+import RealScoutWidget from '@/components/RealScoutWidget';
 import AboutSection from '@/components/AboutSection';
 import TestimonialCard from '@/components/TestimonialCard';
 import CTASection from '@/components/CTASection';
@@ -134,6 +135,16 @@ export default function HomePage() {
         <div className="flex justify-center">
           <RealScoutAdvancedSearch className="w-full max-w-2xl" />
         </div>
+      </Section>
+
+      {/* Featured MLS Listings */}
+      <Section
+        id="featured-listings"
+        title="Featured Las Vegas Homes for Sale"
+        description="Browse active MLS listings updated daily across Las Vegas, Henderson, and Summerlin."
+        className="bg-white"
+      >
+        <RealScoutWidget widgetId="homepage-featured-listings" className="min-h-[600px]" />
       </Section>
 
       {/* 6. About Dr. Jan - Brief with credentials as proof - H2 in Section component */}
