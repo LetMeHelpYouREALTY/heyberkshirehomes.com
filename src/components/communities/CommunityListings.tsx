@@ -60,7 +60,7 @@ export default function CommunityListings({ community }: CommunityListingsProps)
       <div className="mt-8 text-center">
         <a
           href={`tel:${siteDetails.contact.primaryPhone}`}
-          className="inline-block bg-gold hover:bg-gold-dark text-white font-semibold px-8 py-4 rounded-full transition-colors"
+          className="inline-block bg-gold-dark hover:bg-primary text-white font-semibold px-8 py-4 rounded-full transition-colors"
         >
           Call Dr. Jan for Off-Market Listings: {siteDetails.contact.primaryPhone}
         </a>

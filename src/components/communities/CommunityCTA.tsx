@@ -22,7 +22,7 @@ export default function CommunityCTA({ community }: CommunityCTAProps) {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href={`tel:${siteDetails.contact.primaryPhone}`}
-              className="bg-gold hover:bg-gold-dark text-white px-8 py-4 rounded-full font-semibold text-lg transition-colors shadow-lg"
+              className="bg-gold-dark hover:bg-primary text-white px-8 py-4 rounded-full font-semibold text-lg transition-colors shadow-lg"
             >
               Call/Text {siteDetails.contact.primaryPhone}
             </a>

@@ -106,7 +106,7 @@ export default function ServicesSection() {
                 </li>
               ))}
             </ul>
-            <span className="text-gold hover:text-gold-dark font-semibold group-hover:underline">
+            <span className="text-primary hover:text-primary-dark font-semibold group-hover:underline">
               Learn More →
             </span>
           </Link>

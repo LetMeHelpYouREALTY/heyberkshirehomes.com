@@ -13,10 +13,10 @@
   --charcoal: #1a1a1a;
   --slate: #2d3748;
   
-  /* Accent - Gold */
-  --gold: #b4975a;
-  --gold-light: #d4af37;
-  --gold-dark: #8b7355;
+  /* Accent - Gold (darkened for WCAG AA on light backgrounds) */
+  --gold: #8b7355;
+  --gold-light: #b4975a;
+  --gold-dark: #6d5a42;
   
   /* Neutrals */
   --background: #ffffff;
