@@ -20,7 +20,7 @@ export default function NotFound() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Link
               href="/"
-              className="bg-gold hover:bg-gold-dark text-white px-8 py-3 rounded-full font-semibold transition-colors"
+              className="bg-gold-dark hover:bg-primary text-white px-8 py-3 rounded-full font-semibold transition-colors"
             >
               Go to Homepage
             </Link>
@@ -38,27 +38,27 @@ export default function NotFound() {
             </h3>
             <ul className="space-y-2 text-left">
               <li>
-                <Link href="/" className="text-gold hover:text-gold-dark font-semibold">
+                <Link href="/" className="text-primary hover:text-primary-dark font-semibold">
                   Home →
                 </Link>
               </li>
               <li>
-                <Link href="/55-plus-living" className="text-gold hover:text-gold-dark font-semibold">
+                <Link href="/55-plus-living" className="text-primary hover:text-primary-dark font-semibold">
                   55+ Communities →
                 </Link>
               </li>
               <li>
-                <Link href="/luxury-homes" className="text-gold hover:text-gold-dark font-semibold">
+                <Link href="/luxury-homes" className="text-primary hover:text-primary-dark font-semibold">
                   Luxury Homes →
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="text-gold hover:text-gold-dark font-semibold">
+                <Link href="/about" className="text-primary hover:text-primary-dark font-semibold">
                   About Dr. Jan →
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-gold hover:text-gold-dark font-semibold">
+                <Link href="/contact" className="text-primary hover:text-primary-dark font-semibold">
                   Contact →
                 </Link>
               </li>
@@ -66,7 +66,7 @@ export default function NotFound() {
           </div>
 
           <p className="mt-8 text-slate">
-            Need help? <a href={`tel:${siteDetails.contact.primaryPhone}`} className="text-gold hover:text-gold-dark font-semibold underline">Call/Text {siteDetails.contact.primaryPhone}</a>
+            Need help? <a href={`tel:${siteDetails.contact.primaryPhone}`} className="text-primary hover:text-primary-dark font-semibold underline">Call/Text {siteDetails.contact.primaryPhone}</a>
           </p>
         </div>
       </Container>

@@ -1,32 +1,34 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { GoogleAnalytics } from '@next/third-parties/google';
 import { Inter, Manrope } from "next/font/google";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import FooterHomeValue from "@/components/FooterHomeValue";
-import SimpleSearchSection from "@/components/SimpleSearchSection";
-import RealScoutScript from "@/components/RealScoutScript";
-import WidgetTracker from "@/components/WidgetTracker";
+import FUBPixel from "@/components/FUBPixel";
 import { siteDetails } from '@/data/siteDetails';
 
 import "./globals.css";
 
-const inter = Inter({ 
+const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
+  display: 'swap',
 });
-const manrope = Manrope({ 
+const manrope = Manrope({
   subsets: ['latin'],
   variable: '--font-manrope',
+  weight: ['700'],
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
   title: {
-    default: siteDetails.metadata.title,
+    default: 'Ask Dr. Jan | Las Vegas Real Estate | Berkshire Hathaway HomeServices Nevada',
     template: `%s | ${siteDetails.siteName}`,
   },
-  description: siteDetails.metadata.description,
+  description:
+    'Ask Dr. Jan Duffy — Las Vegas real estate expert with 35+ years, $127M+ sold, backed by Berkshire Hathaway HomeServices Nevada. Current market data, home valuations, 55+ communities, luxury homes.',
   keywords: [
     'Las Vegas real estate',
     'Berkshire Hathaway Las Vegas',
@@ -39,8 +41,9 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: siteDetails.agent.name }],
   openGraph: {
-    title: siteDetails.metadata.title,
-    description: siteDetails.metadata.description,
+    title: 'Ask Dr. Jan | Las Vegas Real Estate | Berkshire Hathaway HomeServices Nevada',
+    description:
+      'Ask Dr. Jan Duffy — Las Vegas real estate expert with 35+ years, $127M+ sold, backed by Berkshire Hathaway HomeServices Nevada. Current market data, home valuations, 55+ communities, luxury homes.',
     url: siteDetails.siteUrl,
     siteName: siteDetails.siteName,
     type: 'website',
@@ -56,8 +59,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: siteDetails.metadata.title,
-    description: siteDetails.metadata.description,
+    title: 'Ask Dr. Jan | Las Vegas Real Estate | Berkshire Hathaway HomeServices Nevada',
+    description:
+      'Ask Dr. Jan Duffy — Las Vegas real estate expert with 35+ years, $127M+ sold, backed by Berkshire Hathaway HomeServices Nevada. Current market data, home valuations, 55+ communities, luxury homes.',
     images: [`${siteDetails.siteUrl}/images/twitter-image.jpg`],
   },
   robots: {
@@ -86,19 +90,17 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${manrope.variable} font-sans antialiased`}
       >
-        {/* RealScout Widget Script - Load once globally for all pages */}
-        <RealScoutScript />
-        {/* Widget Tracker - Analytics tracking */}
-        <WidgetTracker />
+        <Script
+          src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
+          type="module"
+          strategy="lazyOnload"
+        />
+        <FUBPixel />
         {siteDetails.googleAnalyticsId && <GoogleAnalytics gaId={siteDetails.googleAnalyticsId} />}
         <Header />
         <main>
           {children}
         </main>
-        {/* Simple Search Section - Appears on every page */}
-        <SimpleSearchSection />
-        {/* Home Value Widget Section - Before Footer */}
-        <FooterHomeValue />
         <Footer />
       </body>
     </html>

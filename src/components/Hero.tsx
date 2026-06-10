@@ -14,14 +14,15 @@ export default function Hero() {
           fill
           className="object-cover"
           priority
-          quality={90}
+          quality={75}
+          sizes="100vw"
         />
         <div className="absolute inset-0 bg-primary/80" />
       </div>
 
       <Container className="relative z-10">
         <div className="text-center max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-display leading-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-sans leading-tight">
             Buying, Selling, or Investing in Las Vegas?
           </h1>
           <p className="text-xl md:text-2xl mb-12 text-gray-200">

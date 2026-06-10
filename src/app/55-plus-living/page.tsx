@@ -1,4 +1,4 @@
-import RealScoutWidget from '@/components/RealScoutWidget';
+import RealScoutWidgetLazy from '@/components/RealScoutWidgetLazy';
 import CTASection from '@/components/CTASection';
 import Container from '@/components/Container';
 import Section from '@/components/Section';
@@ -226,7 +226,7 @@ export default function ActiveAdultPage() {
         description="Browse active listings in 55+ communities"
         className="bg-warm-gray"
       >
-        <RealScoutWidget
+        <RealScoutWidgetLazy
           className="min-h-[600px]"
         />
       </Section>

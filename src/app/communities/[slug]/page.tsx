@@ -14,7 +14,7 @@ import CommunityMap from '@/components/communities/CommunityMap';
 import CommunityFAQ from '@/components/communities/CommunityFAQ';
 import CommunityCTA from '@/components/communities/CommunityCTA';
 import Container from '@/components/Container';
-import RealScoutWidget from '@/components/RealScoutWidget';
+import RealScoutWidgetLazy from '@/components/RealScoutWidgetLazy';
 import CTASection from '@/components/CTASection';
 import SchemaMarkup from '@/components/SchemaMarkup';
 import {
@@ -336,8 +336,7 @@ export default async function CommunityPage({
               </ul>
             </div>
           </div>
-          <RealScoutWidget
-            useIframe={true}
+          <RealScoutWidgetLazy
             className="min-h-[600px]"
           />
           <p className="text-sm text-slate text-center mt-4 italic">

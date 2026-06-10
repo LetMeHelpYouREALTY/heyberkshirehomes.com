@@ -13,11 +13,6 @@ const nextConfig = {
       },
     ],
   },
-  eslint: {
-    // Warning: This allows production builds to successfully complete even if
-    // your project has ESLint errors.
-    ignoreDuringBuilds: false,
-  },
   typescript: {
     // Warning: This allows production builds to successfully complete even if
     // your project has type errors.
@@ -34,10 +29,10 @@ const nextConfig = {
               "default-src 'self'",
               "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://em.realscout.com https://www.realscout.com https://widgetbe.com https://www.googletagmanager.com https://www.google-analytics.com",
               "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
-              "font-src 'self' https://fonts.gstatic.com",
+              "font-src 'self' https://fonts.gstatic.com https://widgetbe.com",
               "img-src 'self' data: https: blob:",
               "connect-src 'self' https://em.realscout.com https://www.realscout.com https://widgetbe.com https://www.google-analytics.com https://www.googletagmanager.com",
-              "frame-src 'self' https://em.realscout.com https://www.realscout.com",
+              "frame-src 'self' https://em.realscout.com https://www.realscout.com https://widgetbe.com",
             ].join('; '),
           },
         ],

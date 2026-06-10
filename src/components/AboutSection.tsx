@@ -19,7 +19,7 @@ export default function AboutSection() {
           </p>
           <Link
             href="/about"
-            className="inline-block bg-gold hover:bg-gold-dark text-white px-6 py-3 rounded-full font-semibold transition-colors"
+            className="inline-block bg-gold-dark hover:bg-primary text-white px-6 py-3 rounded-full font-semibold transition-colors"
           >
             Learn More About My Approach →
           </Link>
@@ -37,19 +37,19 @@ export default function AboutSection() {
       {/* Stats as Credentials */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
         <div className="text-center bg-cream rounded-lg p-6">
-          <div className="text-gold text-4xl font-bold mb-2">30+</div>
+          <div className="text-primary text-4xl font-bold mb-2">35+</div>
           <div className="text-slate font-semibold">Years Experience</div>
         </div>
         <div className="text-center bg-cream rounded-lg p-6">
-          <div className="text-gold text-4xl font-bold mb-2">500+</div>
+          <div className="text-primary text-4xl font-bold mb-2">500+</div>
           <div className="text-slate font-semibold">Families Served</div>
         </div>
         <div className="text-center bg-cream rounded-lg p-6">
-          <div className="text-gold text-4xl font-bold mb-2">$127M+</div>
+          <div className="text-primary text-4xl font-bold mb-2">$127M+</div>
           <div className="text-slate font-semibold">Sales Volume</div>
         </div>
         <div className="text-center bg-cream rounded-lg p-6">
-          <div className="text-gold text-4xl font-bold mb-2">Ph.D.</div>
+          <div className="text-primary text-4xl font-bold mb-2">Ph.D.</div>
           <div className="text-slate font-semibold">Research-Driven</div>
         </div>
       </div>

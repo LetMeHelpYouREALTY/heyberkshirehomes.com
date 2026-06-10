@@ -61,7 +61,7 @@ export default function CommunityMap({ community }: CommunityMapProps) {
                     href={`https://www.google.com/maps/search/?api=1&query=${lat},${lng}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gold hover:text-gold-dark underline"
+                    className="text-primary hover:text-primary-dark underline"
                   >
                     View on Google Maps →
                   </a>

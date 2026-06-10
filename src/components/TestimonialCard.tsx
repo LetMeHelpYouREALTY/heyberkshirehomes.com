@@ -24,7 +24,7 @@ export default function TestimonialCard({
         "{quote}"
       </blockquote>
       {result && (
-        <p className="text-sm text-gold font-semibold mb-2">{result}</p>
+        <p className="text-sm text-primary font-semibold mb-2">{result}</p>
       )}
       <div className="border-t pt-4">
         <p className="font-semibold text-slate">{author}</p>

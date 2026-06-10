@@ -1,6 +1,6 @@
 import { Community } from '@/lib/communities';
 import { siteDetails } from '@/data/siteDetails';
-import RealScoutWidget from '../RealScoutWidget';
+import RealScoutWidgetLazy from '../RealScoutWidgetLazy';
 import Section from '../Section';
 
 interface CommunityListingsProps {
@@ -46,11 +46,10 @@ export default function CommunityListings({ community }: CommunityListingsProps)
       {/* RealScout Widget with Price Filters - Using iframe embed */}
       {/* Note: Community filtering is done within the RealScout widget interface */}
       <div className="bg-white rounded-lg shadow-lg p-6">
-        <RealScoutWidget
+        <RealScoutWidgetLazy
           widgetId={`realscout-${community.slug}`}
           priceMin={community.priceMin}
           priceMax={community.priceMax}
-          useIframe={true}
           className="min-h-[600px]"
         />
         <p className="text-sm text-slate text-center mt-4 italic">
@@ -61,7 +60,7 @@ export default function CommunityListings({ community }: CommunityListingsProps)
       <div className="mt-8 text-center">
         <a
           href={`tel:${siteDetails.contact.primaryPhone}`}
-          className="inline-block bg-gold hover:bg-gold-dark text-white font-semibold px-8 py-4 rounded-full transition-colors"
+          className="inline-block bg-gold-dark hover:bg-primary text-white font-semibold px-8 py-4 rounded-full transition-colors"
         >
           Call Dr. Jan for Off-Market Listings: {siteDetails.contact.primaryPhone}
         </a>

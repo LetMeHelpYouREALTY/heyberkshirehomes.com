@@ -36,7 +36,7 @@ export default function CTASection({
   }[variant];
 
   const buttonPrimaryClass = {
-    default: 'bg-gold hover:bg-gold-dark text-white',
+    default: 'bg-gold-dark hover:bg-primary text-white',
     primary: 'bg-gold-light hover:bg-gold text-white',
     dark: 'bg-gold-light hover:bg-gold text-white',
   }[variant];
