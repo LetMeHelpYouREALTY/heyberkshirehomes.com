@@ -2,7 +2,10 @@ import Hero from '@/components/Hero';
 import ServicesSection from '@/components/ServicesSection';
 import CommunitiesSection from '@/components/CommunitiesSection';
 import RealScoutAdvancedSearch from '@/components/RealScoutAdvancedSearch';
-import RealScoutWidget from '@/components/RealScoutWidget';
+import RealScoutWidgetLazy from '@/components/RealScoutWidgetLazy';
+import LazyOnVisible from '@/components/LazyOnVisible';
+import SimpleSearchSection from '@/components/SimpleSearchSection';
+import FooterHomeValue from '@/components/FooterHomeValue';
 import AboutSection from '@/components/AboutSection';
 import TestimonialCard from '@/components/TestimonialCard';
 import CTASection from '@/components/CTASection';
@@ -180,9 +183,9 @@ export default function HomePage() {
             <strong>Looking for off-market listings or coming soon properties?</strong> Call Dr. Jan at {siteDetails.contact.primaryPhone} for exclusive access to pocket listings and pre-market opportunities.
           </p>
         </div>
-        <div className="flex justify-center">
+        <LazyOnVisible minHeight="120px" className="flex justify-center">
           <RealScoutAdvancedSearch className="w-full max-w-2xl" />
-        </div>
+        </LazyOnVisible>
       </Section>
 
       {/* Las Vegas market stats */}
@@ -217,7 +220,7 @@ export default function HomePage() {
         description="Browse active MLS listings updated daily across Las Vegas, Henderson, and Summerlin."
         className="bg-white"
       >
-        <RealScoutWidget widgetId="homepage-featured-listings" className="min-h-[600px]" />
+        <RealScoutWidgetLazy widgetId="homepage-featured-listings" className="min-h-[600px]" />
       </Section>
 
       {/* 6. About Dr. Jan - Brief with credentials as proof - H2 in Section component */}
@@ -291,6 +294,14 @@ export default function HomePage() {
           </div>
         </div>
       </Section>
+
+      <LazyOnVisible minHeight="200px">
+        <SimpleSearchSection />
+      </LazyOnVisible>
+
+      <LazyOnVisible minHeight="400px">
+        <FooterHomeValue />
+      </LazyOnVisible>
 
       <FAQSection />
 

@@ -5,20 +5,21 @@ import { Inter, Manrope } from "next/font/google";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import FooterHomeValue from "@/components/FooterHomeValue";
-import SimpleSearchSection from "@/components/SimpleSearchSection";
 import FUBPixel from "@/components/FUBPixel";
 import { siteDetails } from '@/data/siteDetails';
 
 import "./globals.css";
 
-const inter = Inter({ 
+const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
+  display: 'swap',
 });
-const manrope = Manrope({ 
+const manrope = Manrope({
   subsets: ['latin'],
   variable: '--font-manrope',
+  weight: ['700'],
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
@@ -92,7 +93,7 @@ export default function RootLayout({
         <Script
           src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
           type="module"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
         <FUBPixel />
         {siteDetails.googleAnalyticsId && <GoogleAnalytics gaId={siteDetails.googleAnalyticsId} />}
@@ -100,10 +101,6 @@ export default function RootLayout({
         <main>
           {children}
         </main>
-        {/* Simple Search Section - Appears on every page */}
-        <SimpleSearchSection />
-        {/* Home Value Widget Section - Before Footer */}
-        <FooterHomeValue />
         <Footer />
       </body>
     </html>

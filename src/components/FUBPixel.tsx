@@ -16,10 +16,10 @@ export default function FUBPixel() {
 
   return (
     <>
-      <Script id="fub-pixel-loader" strategy="afterInteractive">
+      <Script id="fub-pixel-loader" strategy="lazyOnload">
         {FUB_PIXEL_SCRIPT}
       </Script>
-      <Script id="fub-pixel-init" strategy="afterInteractive">
+      <Script id="fub-pixel-init" strategy="lazyOnload">
         {`window.widgetTracker('create', '${trackingId}'); window.widgetTracker('send', 'pageview');`}
       </Script>
     </>

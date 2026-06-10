@@ -1,6 +1,6 @@
 import { Community } from '@/lib/communities';
 import { siteDetails } from '@/data/siteDetails';
-import RealScoutWidget from '../RealScoutWidget';
+import RealScoutWidgetLazy from '../RealScoutWidgetLazy';
 import Section from '../Section';
 
 interface CommunityListingsProps {
@@ -46,7 +46,7 @@ export default function CommunityListings({ community }: CommunityListingsProps)
       {/* RealScout Widget with Price Filters - Using iframe embed */}
       {/* Note: Community filtering is done within the RealScout widget interface */}
       <div className="bg-white rounded-lg shadow-lg p-6">
-        <RealScoutWidget
+        <RealScoutWidgetLazy
           widgetId={`realscout-${community.slug}`}
           priceMin={community.priceMin}
           priceMax={community.priceMax}

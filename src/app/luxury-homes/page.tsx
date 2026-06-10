@@ -1,4 +1,4 @@
-import RealScoutWidget from '@/components/RealScoutWidget';
+import RealScoutWidgetLazy from '@/components/RealScoutWidgetLazy';
 import CTASection from '@/components/CTASection';
 import Container from '@/components/Container';
 import Section from '@/components/Section';
@@ -190,7 +190,7 @@ export default function LuxuryHomesPage() {
         description="Browse active luxury listings in Las Vegas"
         className="bg-warm-gray"
       >
-        <RealScoutWidget
+        <RealScoutWidgetLazy
           priceMin={800000}
           className="min-h-[600px]"
         />

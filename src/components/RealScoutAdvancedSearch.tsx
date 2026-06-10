@@ -1,5 +1,3 @@
-'use client';
-
 import { siteDetails } from '@/data/siteDetails';
 
 interface RealScoutAdvancedSearchProps {
@@ -15,8 +13,8 @@ export default function RealScoutAdvancedSearch({
   agentEncodedId,
   className = '',
 }: RealScoutAdvancedSearchProps) {
-  const agentId = agentEncodedId || siteDetails.agent.realscoutAgentId || 'QWdlbnQtMjI1MDUw';
-  
+  const agentId = agentEncodedId || siteDetails.agent.realscoutAgentId;
+
   const attributesString = `agent-encoded-id="${agentId}"`;
 
   return (

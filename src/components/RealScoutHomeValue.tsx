@@ -1,4 +1,4 @@
-'use client';
+import { siteDetails } from '@/data/siteDetails';
 
 interface RealScoutHomeValueProps {
   agentEncodedId?: string;
@@ -12,17 +12,18 @@ interface RealScoutHomeValueProps {
  * Displays home valuation tool on pages
  */
 export default function RealScoutHomeValue({
-  agentEncodedId = 'QWdlbnQtMjI1MDUw',
+  agentEncodedId,
   includeName = true,
   includePhone = true,
   className = '',
 }: RealScoutHomeValueProps) {
-  const attributes: string[] = [`agent-encoded-id="${agentEncodedId}"`];
-  
+  const agentId = agentEncodedId || siteDetails.agent.realscoutAgentId;
+  const attributes: string[] = [`agent-encoded-id="${agentId}"`];
+
   if (includeName) {
     attributes.push('include-name');
   }
-  
+
   if (includePhone) {
     attributes.push('include-phone');
   }

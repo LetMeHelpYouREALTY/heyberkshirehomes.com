@@ -1,6 +1,6 @@
 import { siteDetails } from '@/data/siteDetails';
 
-interface RealScoutWidgetProps {
+export interface RealScoutWidgetProps {
   widgetId?: string;
   filters?: Record<string, string | number | boolean>;
   className?: string;
