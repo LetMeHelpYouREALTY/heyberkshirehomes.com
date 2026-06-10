@@ -6,7 +6,7 @@ export const siteDetails = {
   siteUrl: 'https://www.heyberkshirehomes.com',
   metadata: {
     title: 'Las Vegas Real Estate Expert | Dr. Jan Duffy | Berkshire Hathaway',
-    description: 'Your Las Vegas real estate expert with 30+ years experience. Find luxury homes, 55+ communities, new construction, and investment properties. Let me help you!',
+    description: 'Your Las Vegas real estate expert with 35+ years experience. Find luxury homes, 55+ communities, new construction, and investment properties. Let me help you!',
   },
   language: 'en-us',
   locale: 'en-US',
