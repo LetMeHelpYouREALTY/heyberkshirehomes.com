@@ -17,19 +17,19 @@ import {
   generateOrganizationSchema,
   generateLocalBusinessSchema,
 } from '@/lib/schema';
+import {
+  buildOpenGraph,
+  buildTwitter,
+  SITE_DESCRIPTION,
+  SITE_TITLE,
+} from '@/lib/site-metadata';
 import { siteDetails } from '@/data/siteDetails';
 
 export const metadata = {
-  title: 'Ask Dr. Jan | Las Vegas Real Estate | Berkshire Hathaway HomeServices Nevada',
-  description:
-    'Ask Dr. Jan Duffy — Las Vegas real estate expert with 35+ years, $127M+ sold, backed by Berkshire Hathaway HomeServices Nevada. Current market data, home valuations, 55+ communities, luxury homes.',
-  openGraph: {
-    title: 'Ask Dr. Jan | Las Vegas Real Estate | Berkshire Hathaway HomeServices Nevada',
-    description:
-      'Ask Dr. Jan Duffy — Las Vegas real estate expert with 35+ years, $127M+ sold, backed by Berkshire Hathaway HomeServices Nevada. Current market data, home valuations, 55+ communities, luxury homes.',
-    url: siteDetails.siteUrl,
-    type: 'website',
-  },
+  title: SITE_TITLE,
+  description: SITE_DESCRIPTION,
+  openGraph: buildOpenGraph(),
+  twitter: buildTwitter(),
 };
 
 const marketStats = [
