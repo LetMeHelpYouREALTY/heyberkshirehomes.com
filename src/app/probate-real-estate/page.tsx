@@ -7,7 +7,7 @@ import { generateBreadcrumbSchema } from '@/lib/schema';
 
 export const metadata = {
   title: 'Probate Real Estate Las Vegas | Estate Sales | Dr. Jan Duffy',
-  description: 'Expert guidance for probate real estate in Las Vegas. Helpful, patient service for estate sales and property transfers. Call 702-500-1942.',
+  description: `Expert guidance for probate real estate in Las Vegas. Helpful, patient service for estate sales and property transfers. Call ${siteDetails.contact.primaryPhone}.`,
 };
 
 export default function ProbateRealEstatePage() {

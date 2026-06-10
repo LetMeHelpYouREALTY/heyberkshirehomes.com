@@ -22,8 +22,8 @@ export const siteDetails = {
   contact: {
     // Site-specific CallAction tracking number — set via NEXT_PUBLIC_CALLACTION_TRACKING_PHONE
     callActionPhone: callActionTrackingPhone,
-    primaryPhone: callActionTrackingPhone || '702-500-1942',
-    professionalPhone: callActionTrackingPhone || '702-500-1942',
+    primaryPhone: callActionTrackingPhone || '702-842-1192',
+    professionalPhone: callActionTrackingPhone || '702-842-1192',
     email: 'DrDuffy@HeyBerkshireHomes.com',
     officeAddress: {
       street: '',
