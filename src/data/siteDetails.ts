@@ -40,7 +40,7 @@ export const siteDetails = {
     license: 'S.0197614.LLC',
     brokerage: 'Berkshire Hathaway HomeServices Nevada Properties',
     tagline: 'Let Me Help You!',
-    experience: '30+ years',
+    experience: '35+ years',
     familiesServed: '500+',
     salesVolume: '$127M+',
     realscoutAgentId: 'QWdlbnQtMjI1MDUw', // RealScout agent encoded ID

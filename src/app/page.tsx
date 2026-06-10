@@ -257,7 +257,7 @@ export default function HomePage() {
       >
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
           <div className="bg-cream rounded-xl p-6">
-            <h3 className="text-xl font-bold text-primary mb-3 font-display">30+ Years of Las Vegas Market Experience</h3>
+            <h3 className="text-xl font-bold text-primary mb-3 font-display">35+ Years of Las Vegas Market Experience</h3>
             <p className="text-slate text-sm">
               With over three decades of experience in Las Vegas real estate, Dr. Jan has witnessed market cycles, neighborhood transformations, and emerging opportunities. This deep market knowledge helps clients make informed decisions and avoid costly mistakes.
             </p>
