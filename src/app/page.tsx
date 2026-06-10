@@ -6,7 +6,9 @@ import RealScoutWidget from '@/components/RealScoutWidget';
 import AboutSection from '@/components/AboutSection';
 import TestimonialCard from '@/components/TestimonialCard';
 import CTASection from '@/components/CTASection';
+import FAQSection from '@/components/sections/FAQSection';
 import Section from '@/components/Section';
+import Container from '@/components/Container';
 import SchemaMarkup from '@/components/SchemaMarkup';
 import {
   generateOrganizationSchema,
@@ -15,15 +17,37 @@ import {
 import { siteDetails } from '@/data/siteDetails';
 
 export const metadata = {
-  title: siteDetails.metadata.title,
-  description: siteDetails.metadata.description,
+  title: 'Ask Dr. Jan | Las Vegas Real Estate | Berkshire Hathaway HomeServices Nevada',
+  description:
+    'Ask Dr. Jan Duffy — Las Vegas real estate expert with 35+ years, $127M+ sold, backed by Berkshire Hathaway HomeServices Nevada. Current market data, home valuations, 55+ communities, luxury homes.',
   openGraph: {
-    title: siteDetails.metadata.title,
-    description: siteDetails.metadata.description,
+    title: 'Ask Dr. Jan | Las Vegas Real Estate | Berkshire Hathaway HomeServices Nevada',
+    description:
+      'Ask Dr. Jan Duffy — Las Vegas real estate expert with 35+ years, $127M+ sold, backed by Berkshire Hathaway HomeServices Nevada. Current market data, home valuations, 55+ communities, luxury homes.',
     url: siteDetails.siteUrl,
     type: 'website',
   },
 };
+
+const marketStats = [
+  { value: '$494K', label: 'Median Price', sub: 'Record High — June 2026' },
+  { value: '52', label: 'Avg Days on Market', sub: '' },
+  { value: '6,784', label: 'Active Listings', sub: '' },
+  { value: '3.3', label: 'Months Inventory', sub: '' },
+];
+
+const valuePropositions = [
+  {
+    title: 'Neighborhood Expertise',
+    description:
+      'Proven results across every Las Vegas neighborhood — 35+ years, $127M+ in sales',
+  },
+  {
+    title: 'Local Market Knowledge',
+    description:
+      'Serving Las Vegas and Henderson for 35+ years with proven results.',
+  },
+];
 
 const testimonials = [
   {
@@ -55,6 +79,30 @@ export default function HomePage() {
       
       {/* 1. Hero - Service-focused CTAs (no stats) - H1 is in Hero component */}
       <Hero />
+
+      {/* Trust indicator */}
+      <div className="bg-primary text-white py-3 border-t border-white/10">
+        <Container>
+          <div className="flex items-center justify-center gap-2 text-sm md:text-base">
+            <span className="font-semibold text-white">35+ Years</span>
+            <span>Las Vegas Experience</span>
+          </div>
+        </Container>
+      </div>
+
+      {/* Value proposition cards */}
+      <section className="bg-charcoal text-white py-12">
+        <Container>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            {valuePropositions.map((item) => (
+              <div key={item.title} className="bg-white/5 rounded-xl p-6 border border-white/10">
+                <h3 className="text-xl font-bold mb-3 font-display">{item.title}</h3>
+                <p className="text-gray-300">{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </section>
 
       {/* 2. Services Section - Expanded with benefits - H2 in Section component */}
       <ServicesSection />
@@ -137,6 +185,31 @@ export default function HomePage() {
         </div>
       </Section>
 
+      {/* Las Vegas market stats */}
+      <section className="bg-charcoal text-white py-12">
+        <Container>
+          <div className="text-center mb-8">
+            <h2 className="text-3xl md:text-4xl font-bold font-display mb-2">
+              Las Vegas Market at a Glance
+            </h2>
+            <p className="text-slate-400">Source: GLVAR · Updated June 2026</p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+            {marketStats.map((stat) => (
+              <div key={stat.label} className="text-center">
+                <div className="text-3xl md:text-4xl font-bold text-gold-light mb-1 font-display">
+                  {stat.value}
+                </div>
+                <div className="text-sm md:text-base font-medium mb-1">{stat.label}</div>
+                {stat.sub ? (
+                  <div className="text-xs text-slate-400">{stat.sub}</div>
+                ) : null}
+              </div>
+            ))}
+          </div>
+        </Container>
+      </section>
+
       {/* Featured MLS Listings */}
       <Section
         id="featured-listings"
@@ -218,6 +291,8 @@ export default function HomePage() {
           </div>
         </div>
       </Section>
+
+      <FAQSection />
 
       {/* 9. Contact CTA */}
       <CTASection />
