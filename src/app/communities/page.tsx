@@ -4,10 +4,15 @@ import CommunityCard from '@/components/CommunityCard';
 import Container from '@/components/Container';
 import Section from '@/components/Section';
 import { siteDetails } from '@/data/siteDetails';
+import { PageAnswerBlock, PageFaq, PageSeo } from '@/components/seo/PageSeo';
+import { getPageAnswer } from '@/data/page-answers';
+
+const pageAnswer = getPageAnswer('/communities');
 
 export const metadata = {
-  title: 'Las Vegas Communities | Explore Neighborhoods | Dr. Jan Duffy',
-  description: 'Explore Las Vegas communities from luxury Summerlin estates to family-friendly neighborhoods and 55+ active adult communities.',
+  title: pageAnswer.title,
+  description: pageAnswer.description,
+  alternates: { canonical: `${siteDetails.siteUrl}/communities` },
 };
 
 export default function CommunitiesPage() {
@@ -19,20 +24,20 @@ export default function CommunitiesPage() {
   const otherCommunities = communities.filter((c) => c.category === 'other');
 
   return (
-    <>
+    <PageSeo page={pageAnswer}>
       {/* Hero */}
       <section className="relative bg-gradient-to-br from-primary via-primary-accent to-secondary text-white py-20">
         <Container>
           <h1 className="text-4xl md:text-5xl font-bold mb-4 font-display">
-            Explore Las Vegas Communities
+            Las Vegas Luxury Communities
           </h1>
           <p className="text-xl text-white/90 max-w-3xl">
-            From luxury estates in Summerlin to family-friendly neighborhoods
-            and active adult communities, discover the perfect Las Vegas
-            community for your lifestyle.
+            Summerlin estates, Henderson neighborhoods, and 55+ communities.
+            Each page lists the price band and HOA range published on this site.
           </p>
         </Container>
       </section>
+      <PageAnswerBlock />
 
       {/* Luxury Communities */}
       <Section
@@ -50,8 +55,8 @@ export default function CommunitiesPage() {
       {/* Family Communities */}
       <Section
         id="family"
-        title="Family Communities"
-        description="Great neighborhoods for families with excellent schools and amenities"
+        title="Summerlin and Henderson Neighborhoods"
+        description="Price bands, home styles, and HOA ranges for northwest Las Vegas and Henderson"
         className="bg-warm-gray"
       >
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -119,7 +124,7 @@ export default function CommunitiesPage() {
       >
         <div className="max-w-4xl mx-auto">
           <p className="text-foreground-accent mb-6 text-lg">
-            Las Vegas offers one of the most diverse real estate markets in the Southwest, with communities ranging from luxury guard-gated estates in Summerlin to family-friendly neighborhoods in Henderson, active adult 55+ communities, and new construction master-planned developments. Understanding the different areas and what each offers helps you find the perfect community for your lifestyle, budget, and long-term goals.
+            Las Vegas listings on this site run from Summerlin guard-gated estates to Henderson neighborhoods, 55+ communities, and new construction. Compare the price band, the gate, and the HOA before you choose.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
             <div className="bg-white rounded-xl p-6">
@@ -135,15 +140,15 @@ export default function CommunitiesPage() {
               </ul>
             </div>
             <div className="bg-white rounded-xl p-6">
-              <h3 className="text-xl font-bold text-primary mb-3 font-display">Family-Friendly Communities</h3>
+              <h3 className="text-xl font-bold text-primary mb-3 font-display">Henderson and Northwest Neighborhoods</h3>
               <p className="text-slate text-sm mb-3">
-                Family-friendly neighborhoods throughout Las Vegas offer excellent schools, parks, and amenities perfect for raising children. These communities typically feature:
+                Henderson, Skye Canyon, and Centennial Hills are published on this site from about $300,000 to $2 million. Compare square footage, parks, and drive time.
               </p>
               <ul className="list-disc list-inside text-sm text-slate space-y-1">
-                <li>Top-rated schools and educational options</li>
-                <li>Parks, playgrounds, and recreational facilities</li>
-                <li>Safe neighborhoods with strong community feel</li>
-                <li>Homes across various price points</li>
+                <li>Parks, trails, and recreation facilities</li>
+                <li>Single-family homes and townhomes</li>
+                <li>Published HOA ranges on each community page</li>
+                <li>Commute times you can measure to Summerlin or the Strip</li>
               </ul>
             </div>
             <div className="bg-white rounded-xl p-6">
@@ -201,7 +206,7 @@ export default function CommunitiesPage() {
           <div className="bg-cream rounded-xl p-6">
             <h3 className="text-xl font-bold text-primary mb-3 font-display">Lifestyle Matching</h3>
             <p className="text-slate text-sm">
-              I take time to understand your lifestyle, priorities, and long-term goals to match you with communities that fit. Whether you prioritize schools, amenities, privacy, or value, I'll help you find the right fit.
+              Tell me the square footage, the gate, the commute, and the HOA you will accept. I will match those facts to a community.
             </p>
           </div>
         </div>
@@ -211,7 +216,7 @@ export default function CommunitiesPage() {
       <Section id="cta" title="Can't Find What You're Looking For? Let's Discuss Your Needs" description="Every buyer has unique needs and preferences">
         <div className="text-center max-w-2xl mx-auto">
           <p className="text-lg text-foreground-accent mb-6">
-            With so many communities to choose from in Las Vegas, finding the perfect fit can feel overwhelming. Every buyer has unique needs, preferences, and priorities. Let's discuss what matters most to you—whether it's schools, amenities, price point, lifestyle, or investment potential—and I'll help you find the perfect community.
+            Bring the price, the square footage, and the drive you will make. I will name the communities that match those facts.
           </p>
           <p className="text-foreground-accent mb-6">
             With {siteDetails.agent.experience} of experience in Las Vegas real estate, I know the communities, understand the market, and can guide you to neighborhoods that match your goals. Whether you're relocating from another state, moving within Las Vegas, or planning for retirement, I'm here to help.
@@ -227,6 +232,7 @@ export default function CommunitiesPage() {
           </p>
         </div>
       </Section>
-    </>
+      <PageFaq />
+    </PageSeo>
   );
 }

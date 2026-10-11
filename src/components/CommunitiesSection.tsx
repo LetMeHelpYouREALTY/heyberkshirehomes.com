@@ -15,7 +15,7 @@ export default function CommunitiesSection() {
     { key: 'all', label: 'All' },
     { key: 'luxury', label: 'Luxury ($800K+)' },
     { key: '55plus', label: '55+ Active Adult' },
-    { key: 'family', label: 'Family-Friendly' },
+    { key: 'family', label: 'Neighborhoods' },
     { key: 'new-construction', label: 'New Construction' },
   ];
 

@@ -33,13 +33,27 @@ export function generateOrganizationSchema(): SchemaMarkup {
       '@type': 'RealEstateAgent',
       name: siteDetails.agent.brokerage,
     },
+    areaServed: [
+      { '@type': 'City', name: 'Las Vegas' },
+      { '@type': 'City', name: 'Henderson' },
+      { '@type': 'Place', name: 'Summerlin' },
+    ],
+    hasCredential: {
+      '@type': 'EducationalOccupationalCredential',
+      credentialCategory: 'license',
+      identifier: siteDetails.agent.license,
+      recognizedBy: {
+        '@type': 'Organization',
+        name: 'Nevada Real Estate Division',
+      },
+    },
     knowsAbout: [
-      'Real Estate',
-      'Luxury Homes',
-      '55+ Communities',
-      'New Construction',
-      'Investment Properties',
-      'Las Vegas Real Estate',
+      'Las Vegas luxury real estate',
+      'Summerlin estates',
+      'The Ridges',
+      'Heritage at Stonebridge',
+      '55+ communities',
+      'New construction',
     ],
   };
 }
@@ -48,12 +62,14 @@ export function generateLocalBusinessSchema(): SchemaMarkup {
   return {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
+    additionalType: 'https://schema.org/RealEstateAgent',
     '@id': `${siteDetails.siteUrl}/#localbusiness`,
     name: `${siteDetails.agent.name} - ${siteDetails.agent.brokerage}`,
     image: `${siteDetails.siteUrl}${siteDetails.siteLogo}`,
     url: siteDetails.siteUrl,
     telephone: siteDetails.contact.primaryPhone,
-    priceRange: '$$$',
+    email: siteDetails.contact.email,
+    priceRange: '$$$$',
     address: {
       '@type': 'PostalAddress',
       addressLocality: siteDetails.contact.officeAddress.city,
@@ -78,11 +94,7 @@ export function generateLocalBusinessSchema(): SchemaMarkup {
       opens: '09:00',
       closes: '18:00',
     },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '5',
-      reviewCount: '50', // Update with actual review count
-    },
+    areaServed: ['Las Vegas', 'Summerlin', 'Henderson', 'North Las Vegas'],
   };
 }
 

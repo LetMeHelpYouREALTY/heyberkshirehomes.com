@@ -4,6 +4,10 @@ import { useState } from 'react';
 import Container from '@/components/Container';
 import Section from '@/components/Section';
 import { siteDetails } from '@/data/siteDetails';
+import { PageAnswerBlock, PageFaq, PageSeo } from '@/components/seo/PageSeo';
+import { getPageAnswer } from '@/data/page-answers';
+
+const pageAnswer = getPageAnswer('/contact');
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -46,19 +50,19 @@ export default function ContactPage() {
   };
 
   return (
-    <>
+    <PageSeo page={pageAnswer}>
       {/* Hero */}
       <section className="relative bg-gradient-to-br from-primary via-primary-accent to-secondary text-white py-20">
         <Container>
           <h1 className="text-4xl md:text-5xl font-bold mb-4 font-display">
-            Get In Touch
+            Contact a Las Vegas Luxury Realtor
           </h1>
           <p className="text-xl text-white/90 max-w-3xl">
-            Ready to start your Las Vegas real estate journey? Let's talk about
-            your goals and how I can help.
+            Call or text {siteDetails.contact.primaryPhone}. Summerlin estates, 55+ communities, and home valuations.
           </p>
         </Container>
       </section>
+      <PageAnswerBlock />
 
       {/* Contact Methods */}
       <Section
@@ -364,6 +368,7 @@ export default function ContactPage() {
           </div>
         </div>
       </Section>
-    </>
+      <PageFaq />
+    </PageSeo>
   );
 }

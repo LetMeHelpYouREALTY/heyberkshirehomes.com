@@ -38,7 +38,9 @@ export default function CommunityHero({ community }: CommunityHeroProps) {
           <p className="text-xl text-gray-200 mb-6">{community.tagline}</p>
           <div className="flex flex-wrap gap-3">
             <span className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-white text-sm font-semibold">
-              {community.homeCount} Homes
+              {/home|floor|plan/i.test(community.homeCount)
+                ? community.homeCount
+                : `${community.homeCount} homes`}
             </span>
             <span className="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-white text-sm font-semibold">
               {community.priceRange}

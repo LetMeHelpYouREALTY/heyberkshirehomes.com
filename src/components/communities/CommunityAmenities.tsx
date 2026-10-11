@@ -14,7 +14,7 @@ export default function CommunityAmenities({ community }: CommunityAmenitiesProp
     >
       <div className="max-w-4xl mx-auto mb-8">
         <p className="text-slate text-center mb-6 text-lg">
-          {community.name} offers an impressive array of amenities designed to support an active, vibrant lifestyle. From golf courses and fitness centers to social clubs and recreational facilities, these amenities create a resort-like experience that enhances daily living and provides countless opportunities for recreation, socializing, and staying active.
+          {community.name} publishes the amenities listed below. Use that list, not a generic 55+ brochure. {community.golf ? 'Golf is included in the community.' : 'Golf is not listed as a community amenity.'}
         </p>
         <p className="text-slate text-center text-lg">
           The amenities in {community.name} are maintained by the HOA and included in your monthly fees, ensuring they remain in excellent condition and are always available for your enjoyment. Whether you're an avid golfer, fitness enthusiast, social butterfly, or someone who simply enjoys having options, {community.name}'s amenities cater to a wide range of interests and activities.

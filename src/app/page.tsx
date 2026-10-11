@@ -12,24 +12,29 @@ import CTASection from '@/components/CTASection';
 import FAQSection from '@/components/sections/FAQSection';
 import Section from '@/components/Section';
 import Container from '@/components/Container';
-import SchemaMarkup from '@/components/SchemaMarkup';
-import {
-  generateOrganizationSchema,
-  generateLocalBusinessSchema,
-} from '@/lib/schema';
+import { PageAnswerBlock, PageSeo } from '@/components/seo/PageSeo';
+import { getPageAnswer } from '@/data/page-answers';
 import {
   buildOpenGraph,
   buildTwitter,
-  SITE_DESCRIPTION,
-  SITE_TITLE,
 } from '@/lib/site-metadata';
 import { siteDetails } from '@/data/siteDetails';
 
+const homeAnswer = getPageAnswer('/');
+
 export const metadata = {
-  title: SITE_TITLE,
-  description: SITE_DESCRIPTION,
-  openGraph: buildOpenGraph(),
-  twitter: buildTwitter(),
+  title: homeAnswer.title,
+  description: homeAnswer.description,
+  alternates: { canonical: siteDetails.siteUrl },
+  openGraph: buildOpenGraph({
+    title: homeAnswer.title,
+    description: homeAnswer.description,
+    url: siteDetails.siteUrl,
+  }),
+  twitter: buildTwitter({
+    title: homeAnswer.title,
+    description: homeAnswer.description,
+  }),
 };
 
 const marketStats = [
@@ -75,13 +80,9 @@ const testimonials = [
 
 export default function HomePage() {
   return (
-    <>
-      <SchemaMarkup
-        schemas={[generateOrganizationSchema(), generateLocalBusinessSchema()]}
-      />
-      
-      {/* 1. Hero - Service-focused CTAs (no stats) - H1 is in Hero component */}
+    <PageSeo page={homeAnswer}>
       <Hero />
+      <PageAnswerBlock />
 
       {/* Trust indicator */}
       <div className="bg-primary text-white py-3 border-t border-white/10">
@@ -93,9 +94,12 @@ export default function HomePage() {
         </Container>
       </div>
 
-      {/* Value proposition cards */}
-      <section className="bg-charcoal text-white py-12">
+      <section id="practice" className="bg-charcoal text-white py-12">
         <Container>
+          <h2 className="text-3xl font-bold text-center font-display mb-3">What this practice handles</h2>
+          <p id="practice-answer" className="section-answer text-center text-gray-200 max-w-3xl mx-auto mb-8">
+            {homeAnswer.sections.practice}
+          </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {valuePropositions.map((item) => (
               <div key={item.title} className="bg-white/5 rounded-xl p-6 border border-white/10">
@@ -132,7 +136,7 @@ export default function HomePage() {
             <div className="bg-cream rounded-xl p-6">
               <h3 className="text-xl font-bold text-primary mb-3 font-display">Diverse Neighborhood Options</h3>
               <p className="text-slate text-sm">
-                From luxury estates in Summerlin to active adult communities and family-friendly neighborhoods, Las Vegas offers something for every lifestyle. Whether you're seeking a guard-gated community, golf course living, or new construction, the options are abundant.
+                Summerlin estates, guard-gated villages, 55+ neighborhoods, and new construction sit in different price bands. Match the house to the gate, the age rule, and the HOA before you compare it with a valley median.
               </p>
             </div>
           </div>
@@ -189,12 +193,15 @@ export default function HomePage() {
       </Section>
 
       {/* Las Vegas market stats */}
-      <section className="bg-charcoal text-white py-12">
+      <section id="market-stats" className="bg-charcoal text-white py-12">
         <Container>
           <div className="text-center mb-8">
             <h2 className="text-3xl md:text-4xl font-bold font-display mb-2">
               Las Vegas Market at a Glance
             </h2>
+            <p id="market-stats-answer" className="section-answer text-gray-200 max-w-3xl mx-auto mb-3">
+              {homeAnswer.sections['market-stats']}
+            </p>
             <p className="text-slate-400">Source: GLVAR · Updated June 2026</p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
@@ -295,18 +302,14 @@ export default function HomePage() {
         </div>
       </Section>
 
-      <LazyOnVisible minHeight="200px">
-        <SimpleSearchSection />
-      </LazyOnVisible>
+      <SimpleSearchSection />
 
-      <LazyOnVisible minHeight="400px">
-        <FooterHomeValue />
-      </LazyOnVisible>
+      <FooterHomeValue />
 
       <FAQSection />
 
       {/* 9. Contact CTA */}
       <CTASection />
-    </>
+    </PageSeo>
   );
 }

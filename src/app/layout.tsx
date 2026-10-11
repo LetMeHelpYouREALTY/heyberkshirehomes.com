@@ -8,6 +8,11 @@ import Footer from "@/components/Footer";
 import FUBPixel from "@/components/FUBPixel";
 import { siteDetails } from '@/data/siteDetails';
 import { rootSiteMetadata } from '@/lib/site-metadata';
+import SchemaMarkup from '@/components/SchemaMarkup';
+import {
+  generateLocalBusinessSchema,
+  generateOrganizationSchema,
+} from '@/lib/schema';
 
 import "./globals.css";
 
@@ -42,6 +47,9 @@ export default function RootLayout({
         />
         <FUBPixel />
         {siteDetails.googleAnalyticsId && <GoogleAnalytics gaId={siteDetails.googleAnalyticsId} />}
+        <SchemaMarkup
+          schemas={[generateOrganizationSchema(), generateLocalBusinessSchema()]}
+        />
         <Header />
         <main>
           {children}

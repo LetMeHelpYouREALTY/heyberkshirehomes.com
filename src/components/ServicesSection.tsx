@@ -11,6 +11,17 @@ interface Service {
 
 const services: Service[] = [
   {
+    title: 'Luxury Homes',
+    href: '/luxury-homes',
+    description: 'Summerlin estates, guard-gated villages, and homes from $800,000.',
+    benefits: [
+      'The Ridges, The Summit, and Red Rock Country Club',
+      'Private showings and off-market inquiries',
+      'Pricing from closed sales on that street',
+    ],
+    icon: '◆',
+  },
+  {
     title: 'Buy a Home',
     href: '/communities',
     description: 'Find the right home at the right price. From first-time buyers to luxury estate seekers.',

@@ -4,10 +4,15 @@ import Section from '@/components/Section';
 import { siteDetails } from '@/data/siteDetails';
 import SchemaMarkup from '@/components/SchemaMarkup';
 import { generateBreadcrumbSchema } from '@/lib/schema';
+import { PageAnswerBlock, PageFaq, PageSeo } from '@/components/seo/PageSeo';
+import { getPageAnswer } from '@/data/page-answers';
+
+const pageAnswer = getPageAnswer('/divorce-real-estate');
 
 export const metadata = {
-  title: 'Divorce Real Estate Las Vegas | Sensitive & Discreet | Dr. Jan Duffy',
-  description: 'Expert guidance for real estate during divorce. Sensitive, discreet service for quick, clean property sales. Las Vegas divorce real estate specialist.',
+  title: pageAnswer.title,
+  description: pageAnswer.description,
+  alternates: { canonical: `${siteDetails.siteUrl}/divorce-real-estate` },
 };
 
 export default function DivorceRealEstatePage() {
@@ -17,7 +22,7 @@ export default function DivorceRealEstatePage() {
   ];
 
   return (
-    <>
+    <PageSeo page={pageAnswer}>
       <SchemaMarkup schemas={[generateBreadcrumbSchema(breadcrumbs)]} />
 
       {/* Hero */}
@@ -32,6 +37,7 @@ export default function DivorceRealEstatePage() {
           </p>
         </Container>
       </section>
+      <PageAnswerBlock />
 
       {/* Overview */}
       <Section
@@ -315,6 +321,7 @@ export default function DivorceRealEstatePage() {
         title="Need Help with Divorce Real Estate?"
         description="Let's discuss your situation in complete confidence. Sensitive, discreet, and efficient service."
       />
-    </>
+      <PageFaq />
+    </PageSeo>
   );
 }

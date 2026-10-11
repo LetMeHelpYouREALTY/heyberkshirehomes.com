@@ -4,10 +4,15 @@ import Section from '@/components/Section';
 import { siteDetails } from '@/data/siteDetails';
 import SchemaMarkup from '@/components/SchemaMarkup';
 import { generateBreadcrumbSchema } from '@/lib/schema';
+import { PageAnswerBlock, PageFaq, PageSeo } from '@/components/seo/PageSeo';
+import { getPageAnswer } from '@/data/page-answers';
+
+const pageAnswer = getPageAnswer('/sell-your-home');
 
 export const metadata = {
-  title: 'Sell Your Home Las Vegas | Free CMA | Top Dollar | Dr. Jan Duffy',
-  description: 'Sell your Las Vegas home for top dollar. Free CMA, expert marketing, and proven results. Your home\'s worth more than online estimates.',
+  title: pageAnswer.title,
+  description: pageAnswer.description,
+  alternates: { canonical: `${siteDetails.siteUrl}/sell-your-home` },
 };
 
 export default function SellYourHomePage() {
@@ -17,7 +22,7 @@ export default function SellYourHomePage() {
   ];
 
   return (
-    <>
+    <PageSeo page={pageAnswer}>
       <SchemaMarkup schemas={[generateBreadcrumbSchema(breadcrumbs)]} />
 
       {/* Hero */}
@@ -32,6 +37,7 @@ export default function SellYourHomePage() {
           </p>
         </Container>
       </section>
+      <PageAnswerBlock />
 
       {/* Value Proposition */}
       <Section
@@ -342,6 +348,7 @@ export default function SellYourHomePage() {
         title="Ready to Sell Your Home?"
         description="Let's discuss your goals and create a plan to sell for top dollar. Free CMA and expert guidance."
       />
-    </>
+      <PageFaq />
+    </PageSeo>
   );
 }

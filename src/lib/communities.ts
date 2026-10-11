@@ -699,6 +699,109 @@ Located within the Aliante master plan, residents enjoy easy access to Aliante C
       'Aliante 55+ community',
     ],
   },
+  {
+    slug: 'heritage-stonebridge',
+    name: 'Heritage at Stonebridge',
+    tagline: 'Guard-gated 55+ neighborhood by Lennar in Stonebridge, Summerlin',
+    location: 'Stonebridge, Summerlin',
+    city: 'Las Vegas',
+    homeCount: '9 floor plans',
+    priceRange: 'New homes were listed from the $500,000s on May 18, 2026. Confirm the live MLS price.',
+    priceMin: 500000,
+    priceMax: 500000,
+    yearEstablished: 2021,
+    builder: 'Lennar',
+    builderStatus: 'active',
+    ageRestriction: '55+',
+    gated: true,
+    golf: false,
+    golfOptional: false,
+    heroImage: '',
+    galleryImages: [],
+    overview: `Heritage at Stonebridge is Lennar’s guard-gated 55+ neighborhood in the village of Stonebridge at Summerlin. The community site lists the address as 930 Silverfir Ct, Las Vegas, NV 89138, with a staffed gatehouse, pools and a spa, a fitness center, a clubhouse, pickleball, bocce, and trails. Summerlin.com describes nine floor plans in three collections. A public seller guide places the start of sales around 2021. A Summerlin.com note dated May 18, 2026 still showed remaining new homes from 1,232 to 1,422 square feet, priced from the $500,000s. That count is not current inventory. HOA dues are not published on the community site. The resale package lists the Heritage association fee and the Summerlin master assessment.`,
+    highlights: [
+      'Guard-gated 55+ neighborhood in Stonebridge, Summerlin',
+      'Address: 930 Silverfir Ct, Las Vegas, NV 89138',
+      'Builder: Lennar. Nine floor plans in three collections (Summerlin.com)',
+      'Staffed gatehouse with 24/7 access control',
+      'Clubhouse, pools and spa, fitness center, pickleball, and bocce',
+      'No community golf course listed on the community site',
+      'HOA dues are not published. Confirm them on the resale package',
+      'Red Rock Canyon and Downtown Summerlin are the nearby anchors',
+    ],
+    amenities: [
+      { category: 'Clubhouse', items: ['Lounge', 'Kitchen', 'Meeting space', 'Views toward the Strip and Red Rock'] },
+      { category: 'Pool and fitness', items: ['Heated pools', 'Hot tub', 'Cabanas', 'Fitness center', 'Fitness studio'] },
+      { category: 'Courts and paths', items: ['Pickleball', 'Bocce ball', 'Walking and biking paths'] },
+      { category: 'Access', items: ['Staffed gatehouse', '24/7 access control'] },
+    ],
+    floorplans: [
+      {
+        name: 'Lennar collections',
+        sqftRange: 'Nine floor plans. A May 18, 2026 note listed remaining homes at 1,232–1,422 sq ft.',
+        bedRange: 'Confirm on the plan',
+        bathRange: 'Confirm on the plan',
+        garageRange: 'Confirm on the plan',
+        priceRange: 'From the $500,000s (Summerlin.com, May 18, 2026). Not a current price.',
+      },
+    ],
+    hoaFees: {
+      monthlyRange: 'Not published. Confirm on the resale package.',
+      includes: ['Clubhouse', 'Pools and spa', 'Fitness center', 'Pickleball and bocce', 'Staffed gate'],
+      golfMembership: 'No community golf course is listed. Nearby courses are separate.',
+      notes: 'Dues are two layers when they apply: the Heritage association and the Summerlin master assessment. heritageatstonebridge.org does not publish the amounts.',
+    },
+    locationInfo: {
+      address: '930 Silverfir Ct, Las Vegas, NV 89138',
+      coordinates: { lat: 36.1582366, lng: -115.3783524 },
+      nearbyAttractions: [
+        { name: 'Red Rock Canyon National Conservation Area', distance: 'Minutes west', type: 'Trails' },
+        { name: 'Downtown Summerlin', distance: 'Short drive', type: 'Shopping and dining' },
+        { name: 'Summerlin parks and trails', distance: 'In Summerlin', type: 'Paths' },
+      ],
+    },
+    faqs: [
+      {
+        question: 'Is Heritage at Stonebridge 55+?',
+        answer: 'Yes. The community site describes it as a guard-gated 55+ neighborhood. Confirm the occupancy rule in the CC&Rs for the address you are buying.',
+      },
+      {
+        question: 'Where is Heritage at Stonebridge?',
+        answer: '930 Silverfir Ct, Las Vegas, NV 89138, in the village of Stonebridge at Summerlin. Source: heritageatstonebridge.org. Map pin from OpenStreetMap, October 11, 2026.',
+      },
+      {
+        question: 'Is the community gated?',
+        answer: 'Yes. The community site describes a staffed gatehouse with round-the-clock access control.',
+      },
+      {
+        question: 'Who built Heritage at Stonebridge?',
+        answer: 'Lennar. Summerlin.com describes Heritage by Lennar as an age-qualified gated neighborhood with nine floor plans in three collections.',
+      },
+      {
+        question: 'What amenities are listed?',
+        answer: 'Pools and a spa, a fitness center, a clubhouse, pickleball, bocce, and walking paths. Source: heritageatstonebridge.org.',
+      },
+      {
+        question: 'What are the HOA dues?',
+        answer: 'They are not published on the community website. Ask for the resale package. It should list the Heritage association fee and the Summerlin master assessment.',
+      },
+      {
+        question: 'Is there golf inside Heritage at Stonebridge?',
+        answer: 'No community golf course is listed on the community site. Championship courses near Red Rock and in Summerlin are a separate trip and a separate fee.',
+      },
+      {
+        question: 'Are new Lennar homes still available?',
+        answer: 'Confirm with Lennar. A Summerlin.com article updated May 18, 2026 still listed remaining new homes. That sentence is not today’s inventory.',
+      },
+    ],
+    seoKeywords: [
+      'Heritage at Stonebridge homes for sale',
+      'Heritage Stonebridge Summerlin',
+      'Lennar 55+ Summerlin',
+      'Stonebridge gated community',
+      '930 Silverfir Ct Las Vegas',
+    ],
+  },
 ];
 
 export async function getCommunityData(slug: string): Promise<Community | null> {

@@ -36,7 +36,7 @@ export default function CommunityOverview({ community }: CommunityOverviewProps)
         <div className="bg-primary/5 rounded-xl p-6 border-l-4 border-gold mb-8">
           <h3 className="text-xl font-bold text-primary mb-3 font-display">Why Choose {community.name}?</h3>
           <p className="text-slate mb-4">
-            {community.name} stands out among Las Vegas 55+ communities for its combination of location, amenities, lifestyle, and value. This community offers active adults the opportunity to enjoy resort-style living with golf courses, fitness centers, social clubs, and organized activities, all while maintaining the convenience and accessibility that Las Vegas provides.
+            {community.name} is a {community.ageRestriction} community in {community.location}. {community.gated ? 'The neighborhood is gated.' : 'The neighborhood is not gated.'} {community.golf ? 'Golf is part of the community.' : 'Golf appears on this page only when the community includes it.'}
           </p>
           <ul className="space-y-2 text-slate">
             <li className="flex items-start">

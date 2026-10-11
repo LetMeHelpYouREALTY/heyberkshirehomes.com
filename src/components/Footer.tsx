@@ -125,6 +125,8 @@ const Footer: React.FC = () => {
                   {footerDetails.contact.email}
                 </a>
               </li>
+              <li>Las Vegas, Nevada</li>
+              <li className="text-sm text-gray-400">{siteDetails.agent.brokerage}</li>
             </ul>
           </div>
         </div>

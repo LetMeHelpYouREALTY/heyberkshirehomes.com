@@ -5,10 +5,15 @@ import Section from '@/components/Section';
 import { siteDetails } from '@/data/siteDetails';
 import SchemaMarkup from '@/components/SchemaMarkup';
 import { generateBreadcrumbSchema } from '@/lib/schema';
+import { PageAnswerBlock, PageFaq, PageSeo } from '@/components/seo/PageSeo';
+import { getPageAnswer } from '@/data/page-answers';
+
+const pageAnswer = getPageAnswer('/new-construction');
 
 export const metadata = {
-  title: 'New Construction Homes Las Vegas | Builder Communities | Dr. Jan Duffy',
-  description: 'Find new construction homes in Las Vegas from top builders. Century Communities, KB Home, Lennar, Pulte, Toll Brothers. Current incentives and warranties.',
+  title: pageAnswer.title,
+  description: pageAnswer.description,
+  alternates: { canonical: `${siteDetails.siteUrl}/new-construction` },
 };
 
 const builders = [
@@ -26,7 +31,7 @@ export default function NewConstructionPage() {
   ];
 
   return (
-    <>
+    <PageSeo page={pageAnswer}>
       <SchemaMarkup schemas={[generateBreadcrumbSchema(breadcrumbs)]} />
 
       {/* Hero */}
@@ -41,6 +46,7 @@ export default function NewConstructionPage() {
           </p>
         </Container>
       </section>
+      <PageAnswerBlock />
 
       {/* Overview */}
       <Section
@@ -273,6 +279,7 @@ export default function NewConstructionPage() {
         title="Ready to Explore New Construction?"
         description="Let's find your perfect new home. I'll help you navigate builder incentives and find the best value."
       />
-    </>
+      <PageFaq />
+    </PageSeo>
   );
 }

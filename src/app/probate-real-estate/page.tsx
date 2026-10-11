@@ -4,10 +4,15 @@ import Section from '@/components/Section';
 import { siteDetails } from '@/data/siteDetails';
 import SchemaMarkup from '@/components/SchemaMarkup';
 import { generateBreadcrumbSchema } from '@/lib/schema';
+import { PageAnswerBlock, PageFaq, PageSeo } from '@/components/seo/PageSeo';
+import { getPageAnswer } from '@/data/page-answers';
+
+const pageAnswer = getPageAnswer('/probate-real-estate');
 
 export const metadata = {
-  title: 'Probate Real Estate Las Vegas | Estate Sales | Dr. Jan Duffy',
-  description: `Expert guidance for probate real estate in Las Vegas. Helpful, patient service for estate sales and property transfers. Call ${siteDetails.contact.primaryPhone}.`,
+  title: pageAnswer.title,
+  description: pageAnswer.description,
+  alternates: { canonical: `${siteDetails.siteUrl}/probate-real-estate` },
 };
 
 export default function ProbateRealEstatePage() {
@@ -17,7 +22,7 @@ export default function ProbateRealEstatePage() {
   ];
 
   return (
-    <>
+    <PageSeo page={pageAnswer}>
       <SchemaMarkup schemas={[generateBreadcrumbSchema(breadcrumbs)]} />
 
       {/* Hero */}
@@ -33,6 +38,7 @@ export default function ProbateRealEstatePage() {
           </p>
         </Container>
       </section>
+      <PageAnswerBlock />
 
       {/* Overview */}
       <Section
@@ -360,6 +366,7 @@ export default function ProbateRealEstatePage() {
         title="Need Help with Probate Real Estate?"
         description="Let's discuss your situation. Patient, helpful guidance every step of the way."
       />
-    </>
+      <PageFaq />
+    </PageSeo>
   );
 }

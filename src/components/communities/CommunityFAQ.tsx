@@ -1,7 +1,5 @@
 import { Community } from '@/lib/communities';
 import Section from '../Section';
-import SchemaMarkup from '../SchemaMarkup';
-import { generateFAQSchema } from '@/lib/schema';
 
 interface CommunityFAQProps {
   community: Community;
@@ -12,16 +10,8 @@ export default function CommunityFAQ({ community }: CommunityFAQProps) {
     return null;
   }
 
-  const faqSchema = generateFAQSchema(
-    community.faqs.map(faq => ({
-      question: faq.question,
-      answer: faq.answer,
-    }))
-  );
-
   return (
     <>
-      <SchemaMarkup schemas={[faqSchema]} />
       <Section
         id="faq"
         title={`Frequently Asked Questions About ${community.name}`}

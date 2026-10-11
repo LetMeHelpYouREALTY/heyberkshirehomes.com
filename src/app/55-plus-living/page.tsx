@@ -8,10 +8,15 @@ import CommunityCard from '@/components/CommunityCard';
 import { siteDetails } from '@/data/siteDetails';
 import SchemaMarkup from '@/components/SchemaMarkup';
 import { generateBreadcrumbSchema } from '@/lib/schema';
+import { PageAnswerBlock, PageFaq, PageSeo } from '@/components/seo/PageSeo';
+import { getPageAnswer } from '@/data/page-answers';
+
+const pageAnswer = getPageAnswer('/55-plus-living');
 
 export const metadata = {
-  title: '55+ Communities Las Vegas | Active Adult Living | Dr. Jan Duffy',
-  description: 'Discover 55+ active adult communities in Las Vegas. Resort-style amenities, golf courses, and vibrant social scenes. Sun City, Del Webb, and more.',
+  title: pageAnswer.title,
+  description: pageAnswer.description,
+  alternates: { canonical: `${siteDetails.siteUrl}/55-plus-living` },
 };
 
 const activeAdultCommunities = getCommunitiesByCategory('55plus');
@@ -23,7 +28,7 @@ export default function ActiveAdultPage() {
   ];
 
   return (
-    <>
+    <PageSeo page={pageAnswer}>
       <SchemaMarkup schemas={[generateBreadcrumbSchema(breadcrumbs)]} />
 
       {/* Hero */}
@@ -39,6 +44,7 @@ export default function ActiveAdultPage() {
           </p>
         </Container>
       </section>
+      <PageAnswerBlock />
 
       {/* Overview */}
       <Section
@@ -232,9 +238,10 @@ export default function ActiveAdultPage() {
       </Section>
 
       <CTASection
-        title="Ready to Explore 55+ Living?"
-        description="Let's find your perfect active adult community. Warm, helpful guidance every step of the way."
+        title="Compare 55+ communities"
+        description="Name the community. I will compare the gate, the HOA, and the floor plans."
       />
-    </>
+      <PageFaq />
+    </PageSeo>
   );
 }
