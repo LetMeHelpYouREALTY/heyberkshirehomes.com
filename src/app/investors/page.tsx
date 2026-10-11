@@ -5,10 +5,15 @@ import Section from '@/components/Section';
 import { siteDetails } from '@/data/siteDetails';
 import SchemaMarkup from '@/components/SchemaMarkup';
 import { generateBreadcrumbSchema } from '@/lib/schema';
+import { PageAnswerBlock, PageFaq, PageSeo } from '@/components/seo/PageSeo';
+import { getPageAnswer } from '@/data/page-answers';
+
+const pageAnswer = getPageAnswer('/investors');
 
 export const metadata = {
-  title: 'Las Vegas Investment Properties | ROI & Cash Flow Analysis | Dr. Jan Duffy',
-  description: 'Las Vegas real estate investment opportunities. ROI analysis, cap rates, cash flow projections, and market data for investors.',
+  title: pageAnswer.title,
+  description: pageAnswer.description,
+  alternates: { canonical: `${siteDetails.siteUrl}/investors` },
 };
 
 export default function InvestorsPage() {
@@ -18,7 +23,7 @@ export default function InvestorsPage() {
   ];
 
   return (
-    <>
+    <PageSeo page={pageAnswer}>
       <SchemaMarkup schemas={[generateBreadcrumbSchema(breadcrumbs)]} />
 
       {/* Hero */}
@@ -33,6 +38,7 @@ export default function InvestorsPage() {
           </p>
         </Container>
       </section>
+      <PageAnswerBlock />
 
       {/* Why Las Vegas */}
       <Section
@@ -276,6 +282,7 @@ export default function InvestorsPage() {
         title="Ready to Build Your Investment Portfolio?"
         description="Let's discuss your investment goals and find properties that match your strategy. Data-driven analysis and expert guidance."
       />
-    </>
+      <PageFaq />
+    </PageSeo>
   );
 }

@@ -23,20 +23,20 @@ export default function Hero() {
       <Container className="relative z-10">
         <div className="text-center max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-sans leading-tight">
-            Buying, Selling, or Investing in Las Vegas?
+            Las Vegas Luxury Real Estate
           </h1>
           <p className="text-xl md:text-2xl mb-12 text-gray-200">
-            Expert guidance for luxury homes, 55+ communities, new construction, and investments
+            Summerlin estates, guard-gated communities, and 55+ living with Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties.
           </p>
 
           {/* Service CTA Grid */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
             <Link
-              href="/communities"
+              href="/luxury-homes"
               className="group bg-white text-primary hover:bg-gold hover:text-white rounded-xl p-6 transition-all hover:-translate-y-1 shadow-lg"
             >
               <div className="text-4xl mb-3">🏠</div>
-              <div className="font-semibold text-lg">Buy a Home</div>
+              <div className="font-semibold text-lg">Luxury Homes</div>
             </Link>
             <Link
               href="/sell-your-home"

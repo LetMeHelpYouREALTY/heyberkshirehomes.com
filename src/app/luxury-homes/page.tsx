@@ -7,10 +7,15 @@ import { getCommunitiesByCategory } from '@/data/communities';
 import { siteDetails } from '@/data/siteDetails';
 import SchemaMarkup from '@/components/SchemaMarkup';
 import { generateBreadcrumbSchema } from '@/lib/schema';
+import { PageAnswerBlock, PageFaq, PageSeo } from '@/components/seo/PageSeo';
+import { getPageAnswer } from '@/data/page-answers';
+
+const pageAnswer = getPageAnswer('/luxury-homes');
 
 export const metadata = {
-  title: 'Luxury Homes Las Vegas | $800K-$10M+ Estates | Dr. Jan Duffy',
-  description: 'Discover luxury homes in Las Vegas from $800K to $10M+. Exclusive communities including The Ridges, The Summit, and Red Rock Country Club.',
+  title: pageAnswer.title,
+  description: pageAnswer.description,
+  alternates: { canonical: `${siteDetails.siteUrl}/luxury-homes` },
 };
 
 const luxuryCommunities = getCommunitiesByCategory('luxury');
@@ -22,7 +27,7 @@ export default function LuxuryHomesPage() {
   ];
 
   return (
-    <>
+    <PageSeo page={pageAnswer}>
       <SchemaMarkup schemas={[generateBreadcrumbSchema(breadcrumbs)]} />
 
       {/* Hero */}
@@ -38,6 +43,7 @@ export default function LuxuryHomesPage() {
           </p>
         </Container>
       </section>
+      <PageAnswerBlock />
 
       {/* Overview */}
       <Section
@@ -198,8 +204,9 @@ export default function LuxuryHomesPage() {
 
       <CTASection
         title="Ready to Explore Luxury Homes?"
-        description="Let's discuss your luxury real estate goals. Discretion and expertise guaranteed."
+        description="Tell me the community and the price. I will pull the closed sales."
       />
-    </>
+      <PageFaq />
+    </PageSeo>
   );
 }

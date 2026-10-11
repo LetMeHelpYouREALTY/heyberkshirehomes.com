@@ -23,6 +23,8 @@ import {
   generateOrganizationSchema,
 } from '@/lib/schema';
 import { siteDetails } from '@/data/siteDetails';
+import { PageAnswerBlock, PageFaq, PageSeo, SectionAnswer } from '@/components/seo/PageSeo';
+import { detailedCommunityAnswer, simpleCommunityAnswer } from '@/lib/community-page-answer';
 
 // Combine all community slugs for static generation
 export async function generateStaticParams() {
@@ -44,13 +46,15 @@ export async function generateMetadata({
   // Try detailed 55+ community data first
   const detailedCommunity = await getCommunityData(slug);
   if (detailedCommunity) {
+    const pageAnswer = detailedCommunityAnswer(detailedCommunity, slug);
     return {
-      title: `${detailedCommunity.name} Homes for Sale | 55+ Community Las Vegas | Dr. Jan Duffy`,
-      description: `Search ${detailedCommunity.name} homes for sale in ${detailedCommunity.location}. ${detailedCommunity.homeCount} homes, prices from ${detailedCommunity.priceRange}. Expert 55+ community guidance from Dr. Jan Duffy, BHHS Nevada Properties.`,
+      title: pageAnswer.title,
+      description: pageAnswer.description,
       keywords: detailedCommunity.seoKeywords.join(', '),
+      alternates: { canonical: `${siteDetails.siteUrl}/communities/${slug}` },
       openGraph: {
-        title: `${detailedCommunity.name} Homes for Sale | 55+ Community Las Vegas`,
-        description: `${detailedCommunity.tagline}. ${detailedCommunity.homeCount} homes from ${detailedCommunity.priceRange}.`,
+        title: pageAnswer.title,
+        description: pageAnswer.description,
         url: `${siteDetails.siteUrl}/communities/${slug}`,
         type: 'website',
       },
@@ -65,12 +69,14 @@ export async function generateMetadata({
     };
   }
 
+  const pageAnswer = simpleCommunityAnswer(community, slug);
   return {
-    title: `${community.name} Homes for Sale | Las Vegas Real Estate | Dr. Jan Duffy`,
-    description: `${community.description} Find homes for sale in ${community.name}, Las Vegas. ${siteDetails.agent.experience} of expertise.`,
+    title: pageAnswer.title,
+    description: pageAnswer.description,
+    alternates: { canonical: `${siteDetails.siteUrl}/communities/${slug}` },
     openGraph: {
-      title: `${community.name} Homes for Sale | Las Vegas Real Estate`,
-      description: community.description,
+      title: pageAnswer.title,
+      description: pageAnswer.description,
       url: `${siteDetails.siteUrl}/communities/${slug}`,
     },
   };
@@ -99,8 +105,10 @@ export default async function CommunityPage({
       { name: detailedCommunity.name, url: `${siteDetails.siteUrl}/communities/${slug}` },
     ];
 
+    const pageAnswer = detailedCommunityAnswer(detailedCommunity, slug);
+
     return (
-      <>
+      <PageSeo page={pageAnswer}>
         <SchemaMarkup
           schemas={[
             generateBreadcrumbSchema(breadcrumbs),
@@ -116,6 +124,7 @@ export default async function CommunityPage({
         />
 
         <CommunityHero community={detailedCommunity} />
+        <PageAnswerBlock />
         <CommunityOverview community={detailedCommunity} />
         <CommunityListings community={detailedCommunity} />
         <CommunityAmenities community={detailedCommunity} />
@@ -124,7 +133,7 @@ export default async function CommunityPage({
         <CommunityMap community={detailedCommunity} />
         <CommunityFAQ community={detailedCommunity} />
         <CommunityCTA community={detailedCommunity} />
-      </>
+      </PageSeo>
     );
   }
 
@@ -145,8 +154,10 @@ export default async function CommunityPage({
     { name: community.name, url: `${siteDetails.siteUrl}/communities/${slug}` },
   ];
 
+  const simpleAnswer = simpleCommunityAnswer(community, slug);
+
   return (
-    <>
+    <PageSeo page={simpleAnswer}>
       <SchemaMarkup
         schemas={[
           generateBreadcrumbSchema(breadcrumbs),
@@ -173,13 +184,14 @@ export default async function CommunityPage({
             <span className="text-white">{community.name}</span>
           </nav>
           <h1 className="text-4xl md:text-5xl font-bold mb-4 font-display">
-            {community.name} - Las Vegas Real Estate
+            {community.name} Homes for Sale
           </h1>
           <p className="text-xl text-white/90 max-w-3xl">
             {community.description}
           </p>
         </Container>
       </section>
+      <PageAnswerBlock />
 
       {/* Quick Stats */}
       <section className="bg-white border-b py-8">
@@ -214,15 +226,13 @@ export default async function CommunityPage({
       </section>
 
       {/* Community Overview */}
-      <section className="py-12">
+      <section id="overview" className="py-12">
         <Container>
           <div className="max-w-4xl mx-auto mb-8">
             <h2 className="text-3xl font-bold mb-6 font-display text-center">
-              About {community.name} - Las Vegas Real Estate
+              About {community.name}
             </h2>
-            <p className="text-lg text-slate text-center mb-6">
-              {community.name} is one of Las Vegas's premier communities, offering residents a unique combination of location, amenities, and lifestyle. Whether you're seeking luxury living, family-friendly neighborhoods, or active adult communities, {community.name} has something special to offer for every type of homebuyer.
-            </p>
+            <SectionAnswer id="overview" className="text-lg text-slate text-center mb-6" />
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
             <div>
@@ -234,10 +244,7 @@ export default async function CommunityPage({
                   {community.description}
                 </p>
                 <p className="text-slate mb-4">
-                  {community.name} offers a unique lifestyle in the heart of Las
-                  Vegas. Whether you're seeking luxury living, family-friendly
-                  amenities, or active adult communities, this area has
-                  something special to offer. The community has established itself as a desirable location for homeowners who value quality, convenience, and a strong sense of community.
+                  Home styles here: {community.homeStyles.join(', ')}. Published years: {community.yearBuilt}. Published HOA range: {community.hoaRange}.
                 </p>
                 <p className="text-slate mb-4">
                   With {siteDetails.agent.experience} of experience in Las Vegas
@@ -305,12 +312,13 @@ export default async function CommunityPage({
       </section>
 
       {/* RealScout Widget */}
-      <section className="bg-cream py-12">
+      <section id="listings" className="bg-cream py-12">
         <Container>
           <div className="max-w-4xl mx-auto mb-8">
             <h2 className="text-3xl font-bold mb-4 text-center font-display">
               Homes for Sale in {community.name}
             </h2>
+            <SectionAnswer id="listings" className="text-slate text-center mb-6" />
             <p className="text-slate text-center mb-6 text-lg">
               Browse current listings in {community.name} with our comprehensive property search. All listings are updated daily from the MLS, giving you access to the most current inventory available in this Las Vegas community.
             </p>
@@ -346,12 +354,13 @@ export default async function CommunityPage({
       </section>
 
       {/* Market Insights */}
-      <section className="py-12 bg-warm-gray">
+      <section id="market" className="py-12 bg-warm-gray">
         <Container>
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold mb-6 text-center font-display">
               {community.name} Real Estate Market Insights
             </h2>
+            <SectionAnswer id="market" className="text-slate text-center mb-6" />
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
               <div className="bg-white rounded-xl p-6 shadow-md">
                 <h3 className="text-xl font-bold text-primary mb-3 font-display">Pricing Trends</h3>
@@ -383,12 +392,13 @@ export default async function CommunityPage({
       </section>
 
       {/* Why Work With Dr. Jan for This Community */}
-      <section className="py-12">
+      <section id="advisor" className="py-12">
         <Container>
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold mb-6 text-center font-display">
               Why Work With Dr. Jan Duffy for {community.name} Real Estate
             </h2>
+            <SectionAnswer id="advisor" className="text-slate text-center mb-6" />
             <p className="text-slate text-center mb-8 text-lg">
               With {siteDetails.agent.experience} of experience in Las Vegas real estate and deep knowledge of {community.name} and surrounding communities, I bring the expertise and personalized service you need to successfully buy or sell in this area.
             </p>
@@ -418,11 +428,12 @@ export default async function CommunityPage({
 
       {/* Related Communities */}
       {relatedCommunities.length > 0 && (
-        <section className="py-12 bg-warm-gray">
+        <section id="related" className="py-12 bg-warm-gray">
           <Container>
             <h2 className="text-3xl font-bold mb-4 text-center font-display">
               Explore Related Las Vegas Communities
             </h2>
+            <SectionAnswer id="related" className="text-slate text-center mb-6" />
             <p className="text-slate text-center mb-8 max-w-2xl mx-auto">
               If {community.name} isn't quite the right fit, or if you'd like to compare options, here are related communities in Las Vegas that might also interest you. Each offers unique features and benefits for different lifestyles and budgets.
             </p>
@@ -454,8 +465,9 @@ export default async function CommunityPage({
 
       <CTASection
         title={`Thinking About ${community.name}?`}
-        description={`Let's find your perfect home in ${community.name}. ${siteDetails.agent.tagline}`}
+        description={`Call ${siteDetails.contact.primaryPhone} with the address. ${siteDetails.agent.tagline}`}
       />
-    </>
+      <PageFaq />
+    </PageSeo>
   );
 }

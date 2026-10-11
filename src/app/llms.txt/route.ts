@@ -5,29 +5,44 @@ import { siteDetails } from '@/data/siteDetails';
 export async function GET() {
   const baseUrl = siteDetails.siteUrl;
   const phone = siteDetails.contact.primaryPhone;
-  const content = `# Berkshire Homes — Dr. Jan Duffy
-> Berkshire Hathaway HomeServices Las Vegas properties
-## About
-Dr. Jan Duffy is a Nevada-licensed real estate professional (S.0197614.LLC) with Berkshire Hathaway HomeServices Nevada Properties. With 35+ years of experience serving the Las Vegas area and over $127M in career sales, Dr. Duffy specializes in this community and helps families find their perfect Nevada home.
-- **Brokerage:** Berkshire Hathaway HomeServices Nevada Properties
-- **License:** Nevada S.0197614.LLC
-- **Phone:** ${phone}
-- **Website:** ${baseUrl}
-## Services
-- Residential home buying and selling
-- Community-specific property expertise
-- Relocation services for moving to Nevada
-- Home valuation and market analysis
-- Investment property guidance
-## Coverage Area
-Las Vegas, Henderson, North Las Vegas, and surrounding Southern Nevada communities
-## Key Pages
+  const content = `# ${siteDetails.siteName}
+> Las Vegas luxury real estate. Dr. Jan Duffy, ${siteDetails.agent.brokerage}.
+
+## Entity
+- Agent: Dr. Jan Duffy
+- License: Nevada ${siteDetails.agent.license}
+- Brokerage: ${siteDetails.agent.brokerage}
+- Phone: ${phone}
+- Email: ${siteDetails.contact.email}
+- Service area: Las Vegas, Summerlin, Henderson, North Las Vegas
+- Experience stated on this site: ${siteDetails.agent.experience}
+- Career sales stated on this site: ${siteDetails.agent.salesVolume}
+- Updated: 2026-10-11
+
+## What this site answers
+Luxury buyers and sellers use this site for Summerlin estates, guard-gated communities, 55+ neighborhoods, and new construction. Each page opens with a direct answer, a fact table, and a source when a number comes from outside the brokerage.
+
+## Heritage at Stonebridge
+- Guard-gated 55+ neighborhood by Lennar in Stonebridge, Summerlin
+- Address: 930 Silverfir Ct, Las Vegas, NV 89138
+- Source: https://www.heritageatstonebridge.org/
+- Lennar floor plans: https://summerlin.com/heritage-by-lennar-is-newest-neighborhood-in-the-village-of-stonebridge-at-summerlin/
+- HOA dues: not published on the community site. Confirm on the resale package.
+- Page: ${baseUrl}/communities/heritage-stonebridge
+
+## Key pages
 - [Home](${baseUrl}/)
-- [Contact](${baseUrl}/contact)
+- [Luxury homes](${baseUrl}/luxury-homes)
+- [55+ communities](${baseUrl}/55-plus-living)
+- [Communities](${baseUrl}/communities)
+- [Heritage at Stonebridge](${baseUrl}/communities/heritage-stonebridge)
+- [New construction](${baseUrl}/new-construction)
+- [Sell](${baseUrl}/sell-your-home)
 - [About](${baseUrl}/about)
+- [Contact](${baseUrl}/contact)
+
 ## Contact
-- **Call/Text:** ${phone}
-- **Website:** ${baseUrl}
+Call or text ${phone}.
 `;
   return new Response(content, {
     headers: {

@@ -1,6 +1,9 @@
 import Section from '../Section';
 import SchemaMarkup from '../SchemaMarkup';
 import { generateFAQSchema } from '@/lib/schema';
+import { siteDetails } from '@/data/siteDetails';
+
+const phone = siteDetails.contact.primaryPhone;
 
 const faqs = [
   {
@@ -16,37 +19,37 @@ const faqs = [
   {
     question: 'What is the current Las Vegas median home price?',
     answer:
-      'The Las Vegas median single-family home price hit a record $494,000 in June 2026 — up from $450K a year ago. Summerlin and Henderson luxury communities run $800K–$3M+. Call or text 702-222-1964 for a neighborhood-specific price range based on exactly where you\'re looking.',
+      `The Las Vegas median single-family home price on this site is the GLVAR figure of $494,000 for June 2026. Luxury communities on this site start at $800,000. Call or text ${phone} for a range on a specific street.`,
   },
   {
     question: 'Do you help with home valuations?',
     answer:
-      'Yes — and our valuations are based on closed MLS data, not algorithm estimates. With 35+ years and $127M+ in Las Vegas sales, we know what the market actually pays for specific streets, lot premiums, and upgrades. Text 702-222-1964 to schedule a no-obligation valuation.',
+      `Yes. A pricing opinion uses closed MLS sales for that street. This site states 35+ years and $127M+ in Las Vegas sales. Text ${phone} with the address.`,
   },
   {
     question: 'What makes Berkshire Hathaway HomeServices different from other brokerages?',
     answer:
-      "BHHS is backed by Warren Buffett's Berkshire Hathaway — the brand carries institutional trust that matters when a seller is choosing who to list with and when a buyer's offer hits a competing desk. Our 50,000+ agent network also means seamless referrals for clients relocating from any market.",
+      `The brokerage on this site is ${siteDetails.agent.brokerage}. The license is Nevada ${siteDetails.agent.license}.`,
   },
   {
     question: 'Can you help with investment properties in Las Vegas?',
     answer:
-      'Yes. Las Vegas currently sits at 3.3 months of inventory — a balanced market with cap rate opportunities in North Las Vegas and Henderson. We analyze price-to-rent ratios and cash-on-cash returns before recommending any investment property. Text 702-222-1964 to run the numbers on a specific address.',
+      `Yes. This site cites 3.3 months of inventory from GLVAR, June 2026. The worksheet uses the address, the rent, and the HOA. Text ${phone} with the property.`,
   },
   {
     question: 'Do you work with 55+ community buyers?',
     answer:
-      "Extensively. We're the go-to team for Sun City Summerlin, Del Webb North Ranch, Heritage at Stonebridge, and every active-adult community in the valley. These communities have HOA rules, age restrictions, and resale nuances that most agents miss. We've closed hundreds of 55+ transactions.",
+      'Yes. Sun City Summerlin, Del Webb, and Heritage at Stonebridge each have an age rule, an HOA, and a resale package. Compare those three facts before you tour.',
   },
   {
     question: 'What are your fees?',
     answer:
-      "Per NAR's August 2024 settlement rules, buyer broker compensation is fully negotiable and must be disclosed in your written buyer agreement before any showings. We discuss this transparently at the first consultation. There is no cost to start a conversation — call or text 702-222-1964.",
+      `Buyer broker compensation is negotiable and is written into the buyer agreement before showings. Call or text ${phone} to start that conversation.`,
   },
   {
     question: 'How do I get started?',
     answer:
-      'Call or text Dr. Jan directly at 702-222-1964 — she answers her own phone. Or use the contact form below. First step is a 15-minute conversation to understand your goals, timeline, and budget. No pressure, no scripts.',
+      `Call or text ${phone}, or use the contact form. The first conversation covers the community, the timing, and the price.`,
   },
 ];
 

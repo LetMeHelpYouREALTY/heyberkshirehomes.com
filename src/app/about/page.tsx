@@ -5,10 +5,15 @@ import CTASection from '@/components/CTASection';
 import { siteDetails } from '@/data/siteDetails';
 import SchemaMarkup from '@/components/SchemaMarkup';
 import { generateBreadcrumbSchema, generateOrganizationSchema } from '@/lib/schema';
+import { PageAnswerBlock, PageFaq, PageSeo } from '@/components/seo/PageSeo';
+import { getPageAnswer } from '@/data/page-answers';
+
+const pageAnswer = getPageAnswer('/about');
 
 export const metadata = {
-  title: 'About Dr. Jan Duffy | Las Vegas Real Estate Expert | Berkshire Hathaway',
-  description: `Meet Dr. Jan Duffy, your Las Vegas real estate expert with ${siteDetails.agent.experience} of experience. ${siteDetails.agent.familiesServed} families served, ${siteDetails.agent.salesVolume} in sales.`,
+  title: pageAnswer.title,
+  description: pageAnswer.description,
+  alternates: { canonical: `${siteDetails.siteUrl}/about` },
 };
 
 export default function AboutPage() {
@@ -18,7 +23,7 @@ export default function AboutPage() {
   ];
 
   return (
-    <>
+    <PageSeo page={pageAnswer}>
       <SchemaMarkup
         schemas={[
           generateBreadcrumbSchema(breadcrumbs),
@@ -30,15 +35,15 @@ export default function AboutPage() {
       <section className="relative bg-gradient-to-br from-primary via-primary-accent to-secondary text-white py-20">
         <Container>
           <h1 className="text-4xl md:text-5xl font-bold mb-4 font-display">
-            About Dr. Jan Duffy
+            Dr. Jan Duffy, Las Vegas Luxury Realtor
           </h1>
           <p className="text-xl text-white/90 max-w-3xl">
-            Your trusted Las Vegas real estate expert with{' '}
-            {siteDetails.agent.experience} of experience helping families find
-            their perfect homes.
+            {siteDetails.agent.brokerage}. Nevada license {siteDetails.agent.license}.{' '}
+            {siteDetails.agent.experience}. {siteDetails.agent.salesVolume} in career sales.
           </p>
         </Container>
       </section>
+      <PageAnswerBlock />
 
       {/* Bio Section */}
       <Section id="bio" title="Your Las Vegas Real Estate Expert" description="">
@@ -285,8 +290,9 @@ export default function AboutPage() {
 
       <CTASection
         title="Ready to Work Together?"
-        description={`Let's discuss your real estate goals. ${siteDetails.agent.tagline}`}
+        description={`Call ${siteDetails.contact.primaryPhone}. ${siteDetails.agent.tagline}`}
       />
-    </>
+      <PageFaq />
+    </PageSeo>
   );
 }

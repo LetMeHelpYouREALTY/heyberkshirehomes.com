@@ -3,10 +3,10 @@ import type { Metadata } from 'next';
 import { siteDetails } from '@/data/siteDetails';
 
 export const SITE_TITLE =
-  'Ask Dr. Jan | Las Vegas Real Estate | Berkshire Hathaway HomeServices Nevada';
+  'Las Vegas Luxury Real Estate | Dr. Jan Duffy | Berkshire Hathaway HomeServices Nevada';
 
 export const SITE_DESCRIPTION =
-  'Ask Dr. Jan Duffy — Las Vegas real estate expert with 35+ years, $127M+ sold, backed by Berkshire Hathaway HomeServices Nevada. Current market data, home valuations, 55+ communities, luxury homes.';
+  'Las Vegas luxury real estate with Dr. Jan Duffy at Berkshire Hathaway HomeServices Nevada. Summerlin estates, guard-gated communities, and 55+ neighborhoods. 35+ years, $127M+ sold.';
 
 export const OG_IMAGE_PATH = '/opengraph-image';
 export const TWITTER_IMAGE_PATH = '/twitter-image';

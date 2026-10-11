@@ -1,7 +1,7 @@
 import { siteDetails } from './siteDetails';
 
 export const footerDetails = {
-  subheading: `Your trusted Las Vegas real estate expert. ${siteDetails.agent.tagline}`,
+  subheading: `Las Vegas luxury real estate. ${siteDetails.agent.brokerage}. ${siteDetails.agent.tagline}`,
   quickLinks: [
     { text: 'Home', url: '/' },
     { text: 'About Dr. Jan', url: '/about' },

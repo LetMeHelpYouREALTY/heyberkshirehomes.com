@@ -62,7 +62,7 @@ export const communities: Community[] = [
   {
     slug: 'skye-canyon',
     name: 'Skye Canyon',
-    description: 'Master-planned community in Northwest Las Vegas featuring newer construction, family-friendly amenities, and modern home designs.',
+    description: 'Master-planned community in Northwest Las Vegas with newer construction, parks, and modern floor plans.',
     priceRange: '$400K - $900K',
     homeStyles: ['Single Family', 'New Construction', 'Modern Designs'],
     yearBuilt: '2015 - Present',
@@ -73,7 +73,7 @@ export const communities: Community[] = [
   {
     slug: 'centennial-hills',
     name: 'Centennial Hills',
-    description: 'Established family-friendly community in Northwest Las Vegas with excellent schools, parks, and convenient shopping.',
+    description: 'Northwest Las Vegas neighborhood with parks, shopping, and single-family homes and townhomes.',
     priceRange: '$350K - $750K',
     homeStyles: ['Single Family', 'Townhomes'],
     yearBuilt: '2000 - 2015',
@@ -95,7 +95,7 @@ export const communities: Community[] = [
   {
     slug: 'henderson',
     name: 'Henderson',
-    description: 'Overview of Henderson real estate including Green Valley, Anthem, and other desirable neighborhoods. Family-friendly with excellent schools.',
+    description: 'Henderson overview covering Green Valley, Anthem, and nearby neighborhoods. Published band on this site: $300K to $2M.',
     priceRange: '$300K - $2M',
     homeStyles: ['Single Family', 'Luxury Homes', '55+ Communities'],
     yearBuilt: '1980 - Present',
@@ -141,11 +141,11 @@ export const communities: Community[] = [
   {
     slug: 'heritage-stonebridge',
     name: 'Heritage at Stonebridge',
-    description: 'Gated 55+ community in Summerlin with elegant homes, clubhouse amenities, and beautiful landscaping.',
-    priceRange: '$400K - $1.2M',
-    homeStyles: ['Single Family', 'Luxury Villas'],
-    yearBuilt: '2000 - 2015',
-    hoaRange: '$300 - $600/month',
+    description: 'Lennar’s guard-gated 55+ neighborhood in Stonebridge, Summerlin. Address: 930 Silverfir Ct, Las Vegas, NV 89138. Clubhouse, pools, fitness, pickleball, and bocce. HOA dues are not published on the community site.',
+    priceRange: 'Confirm current MLS pricing',
+    homeStyles: ['Single-story homes', 'Lennar floor plans'],
+    yearBuilt: 'Early 2020s',
+    hoaRange: 'Confirm on the resale package',
     category: '55plus',
     relatedCommunities: ['sun-city-summerlin', 'del-webb'],
   },

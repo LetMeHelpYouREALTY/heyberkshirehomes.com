@@ -1,5 +1,6 @@
 import RealScoutSimpleSearch from './RealScoutSimpleSearch';
 import Container from './Container';
+import { SectionAnswer } from './seo/PageSeo';
 
 /**
  * Simple Search Section Component
@@ -7,12 +8,13 @@ import Container from './Container';
  */
 export default function SimpleSearchSection() {
   return (
-    <section className="bg-white py-12 border-t border-gray-200">
+    <section id="quick-search" className="bg-white py-12 border-t border-gray-200">
       <Container>
         <div className="text-center mb-8">
           <h2 className="text-3xl font-bold text-primary mb-4 font-display">
-            Find Your Dream Home in Las Vegas
+            Search Las Vegas and Summerlin homes
           </h2>
+          <SectionAnswer id="quick-search" className="text-slate text-center max-w-3xl mx-auto mb-4" />
           <p className="text-slate text-lg max-w-2xl mx-auto">
             Start your search with our quick property finder. Enter an address, neighborhood, or zip code to discover available homes that match your criteria.
           </p>
