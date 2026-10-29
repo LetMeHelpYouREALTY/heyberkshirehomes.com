@@ -16,12 +16,12 @@ const faqs = [
   {
     question: 'What is the current Las Vegas median home price?',
     answer:
-      'The Las Vegas median single-family home price hit a record $494,000 in June 2026 — up from $450K a year ago. Summerlin and Henderson luxury communities run $800K–$3M+. Call or text 702-222-1964 for a neighborhood-specific price range based on exactly where you\'re looking.',
+      'The Las Vegas median single-family home price hit a record $494,000 in June 2026 — up from $450K a year ago. Summerlin and Henderson luxury communities run $800K–$3M+. Call or text 702-500-1955 for a neighborhood-specific price range based on exactly where you\'re looking.',
   },
   {
     question: 'Do you help with home valuations?',
     answer:
-      'Yes — and our valuations are based on closed MLS data, not algorithm estimates. With 35+ years and $127M+ in Las Vegas sales, we know what the market actually pays for specific streets, lot premiums, and upgrades. Text 702-222-1964 to schedule a no-obligation valuation.',
+      'Yes — and our valuations are based on closed MLS data, not algorithm estimates. With 35+ years and $127M+ in Las Vegas sales, we know what the market actually pays for specific streets, lot premiums, and upgrades. Text 702-500-1955 to schedule a no-obligation valuation.',
   },
   {
     question: 'What makes Berkshire Hathaway HomeServices different from other brokerages?',
@@ -31,7 +31,7 @@ const faqs = [
   {
     question: 'Can you help with investment properties in Las Vegas?',
     answer:
-      'Yes. Las Vegas currently sits at 3.3 months of inventory — a balanced market with cap rate opportunities in North Las Vegas and Henderson. We analyze price-to-rent ratios and cash-on-cash returns before recommending any investment property. Text 702-222-1964 to run the numbers on a specific address.',
+      'Yes. Las Vegas currently sits at 3.3 months of inventory — a balanced market with cap rate opportunities in North Las Vegas and Henderson. We analyze price-to-rent ratios and cash-on-cash returns before recommending any investment property. Text 702-500-1955 to run the numbers on a specific address.',
   },
   {
     question: 'Do you work with 55+ community buyers?',
@@ -41,12 +41,12 @@ const faqs = [
   {
     question: 'What are your fees?',
     answer:
-      "Per NAR's August 2024 settlement rules, buyer broker compensation is fully negotiable and must be disclosed in your written buyer agreement before any showings. We discuss this transparently at the first consultation. There is no cost to start a conversation — call or text 702-222-1964.",
+      "Per NAR's August 2024 settlement rules, buyer broker compensation is fully negotiable and must be disclosed in your written buyer agreement before any showings. We discuss this transparently at the first consultation. There is no cost to start a conversation — call or text 702-500-1955.",
   },
   {
     question: 'How do I get started?',
     answer:
-      'Call or text Dr. Jan directly at 702-222-1964 — she answers her own phone. Or use the contact form below. First step is a 15-minute conversation to understand your goals, timeline, and budget. No pressure, no scripts.',
+      'Call or text Dr. Jan directly at 702-500-1955 — she answers her own phone. Or use the contact form below. First step is a 15-minute conversation to understand your goals, timeline, and budget. No pressure, no scripts.',
   },
 ];
 
