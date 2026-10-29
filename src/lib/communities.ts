@@ -88,7 +88,7 @@ export const communities55Plus: Community[] = [
       '/images/communities/sun-city-summerlin/pool.jpg',
       '/images/communities/sun-city-summerlin/homes.jpg',
     ],
-    overview: `Sun City Summerlin is Del Webb's flagship Las Vegas active adult community, offering over 7,700 homes across 2,400 acres in the prestigious Summerlin master plan. Established in 1989, this mature community features tree-lined streets, stunning mountain views, and an unparalleled lifestyle for residents 55 and better.
+    overview: `Sun City Summerlin is Del Webb's flagship Las Vegas active adult community, offering over 7,700 homes across 2,400 acres in the prestigious Summerlin master plan. Established in 1989, this older community features tree-lined streets, stunning mountain views, and an unparalleled lifestyle for residents 55 and better.
 
 With three championship golf courses, four recreation centers totaling over 100,000 square feet, and more than 150 chartered clubs and organizations, Sun City Summerlin delivers the ultimate active adult lifestyle in Southern Nevada.`,
     highlights: [
@@ -96,10 +96,10 @@ With three championship golf courses, four recreation centers totaling over 100,
       '3 championship golf courses (Highland Falls, Palm Valley, Eagle Crest)',
       '4 recreation centers with pools, fitness, and meeting rooms',
       '150+ chartered clubs and social organizations',
-      'Established community with mature landscaping',
+      'Community with mature landscaping',
       'Minutes from Downtown Summerlin shopping & dining',
       'No State Income Tax advantage',
-      'Resale homes only – established neighborhood character',
+      'Resale homes only – older neighborhood character',
     ],
     amenities: [
       { category: 'Golf', items: ['Highland Falls Golf Club', 'Palm Valley Golf Club', 'Eagle Crest Golf Club', 'Pro shops', 'Driving ranges'] },
@@ -135,7 +135,7 @@ With three championship golf courses, four recreation centers totaling over 100,
       },
       {
         question: 'Are there new homes available in Sun City Summerlin?',
-        answer: 'Sun City Summerlin is a fully built-out community. All homes are resales, which means mature landscaping, established neighborhoods, and no construction activity.',
+        answer: 'Sun City Summerlin is a fully built-out community. All homes are resales, which means mature landscaping, older neighborhoods, and no construction activity.',
       },
       {
         question: 'What are the HOA fees in Sun City Summerlin?',
@@ -181,13 +181,13 @@ With three championship golf courses, four recreation centers totaling over 100,
     galleryImages: [],
     overview: `Sun City Anthem is Henderson's premier active adult community, featuring 7,100+ homes nestled in the foothills with stunning mountain and city views. This guard-gated Del Webb community offers two championship golf courses, a 62,000 square foot clubhouse, and an exceptional lifestyle for residents 55 and better.
 
-Located in Henderson – consistently ranked one of America's safest cities – Sun City Anthem combines the active adult lifestyle with small-town charm and easy access to Las Vegas amenities.`,
+Located in Henderson, Nevada's second-largest city, Sun City Anthem combines the active adult lifestyle with small-town charm and easy access to Las Vegas amenities.`,
     highlights: [
       'Guard-gated community with 24/7 security',
       '7,100+ homes with mountain & valley views',
       '2 championship golf courses (Anthem & Revere)',
       '62,000 sq ft Anthem Center clubhouse',
-      'Located in Henderson – one of America\'s safest cities',
+      'Located in Henderson, Nevada\'s second-largest city',
       'Diverse price points ($300Ks–$800Ks)',
       'Strong resale market with consistent activity',
       'Easy access to Lake Mead & Hoover Dam',
@@ -230,7 +230,7 @@ Located in Henderson – consistently ranked one of America's safest cities – 
       },
       {
         question: 'How safe is Henderson?',
-        answer: 'Henderson is consistently ranked as one of the safest cities in America. Combined with Sun City Anthem\'s guard-gated security, residents enjoy exceptional safety and peace of mind.',
+        answer: 'Sun City Anthem is a 55+ community with controlled-access entries. Henderson Police also publish a 90-day crime map online.',
       },
     ],
     seoKeywords: [
@@ -642,13 +642,13 @@ With the 14,000 square foot La Cala Club, resort-style pools, and a full calenda
     golfOptional: false,
     heroImage: '/images/communities/sun-city-aliante/hero.jpg',
     galleryImages: [],
-    overview: `Sun City Aliante brings Del Webb's proven active adult lifestyle to North Las Vegas at accessible price points. With 2,000+ homes built between 2004-2012, this established community offers the full Del Webb amenity package – clubhouse, pools, fitness, and activities – at significantly lower prices than Sun City Summerlin.
+    overview: `Sun City Aliante brings Del Webb's proven active adult lifestyle to North Las Vegas at accessible price points. With 2,000+ homes built between 2004-2012, this older community offers the full Del Webb amenity package – clubhouse, pools, fitness, and activities – at significantly lower prices than Sun City Summerlin.
 
 Located within the Aliante master plan, residents enjoy easy access to Aliante Casino, shopping, and healthcare while benefiting from lower HOA fees and home prices.`,
     highlights: [
       'Most affordable Del Webb in Las Vegas ($250K–$500K)',
       'Full Del Webb amenity package',
-      'Established community (2004-2012)',
+      'Older community (2004-2012)',
       '2,000+ homes',
       'Lower HOA fees than Summerlin/Henderson',
       'Aliante master plan location',

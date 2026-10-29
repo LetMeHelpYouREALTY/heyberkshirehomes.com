@@ -139,7 +139,7 @@ export default function HomePage() {
             <div className="bg-cream rounded-xl p-6">
               <h3 className="text-xl font-bold text-primary mb-3 font-display">Diverse Neighborhood Options</h3>
               <p className="text-slate text-sm">
-                From luxury estates in Summerlin to active adult communities and family-friendly neighborhoods, Las Vegas offers something for every lifestyle. Whether you're seeking a guard-gated community, golf course living, or new construction, the options are abundant.
+                From luxury estates in Summerlin to active adult communities and master-planned neighborhoods, Las Vegas offers something for every lifestyle. Whether you're seeking a guard-gated community, golf course living, or new construction, the options are abundant.
               </p>
             </div>
           </div>
