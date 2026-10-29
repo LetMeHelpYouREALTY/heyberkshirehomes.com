@@ -7,7 +7,7 @@ import { siteDetails } from '@/data/siteDetails';
 
 export const metadata = {
   title: 'Las Vegas Communities | Explore Neighborhoods | Dr. Jan Duffy',
-  description: 'Explore Las Vegas communities from luxury Summerlin estates to family-friendly neighborhoods and 55+ active adult communities.',
+  description: 'Explore Las Vegas communities from luxury Summerlin estates to neighborhoods and 55+ active adult communities.',
 };
 
 export default function CommunitiesPage() {
@@ -27,7 +27,7 @@ export default function CommunitiesPage() {
             Explore Las Vegas Communities
           </h1>
           <p className="text-xl text-white/90 max-w-3xl">
-            From luxury estates in Summerlin to family-friendly neighborhoods
+            From luxury estates in Summerlin to neighborhoods
             and active adult communities, discover the perfect Las Vegas
             community for your lifestyle.
           </p>
@@ -51,7 +51,7 @@ export default function CommunitiesPage() {
       <Section
         id="family"
         title="Family Communities"
-        description="Great neighborhoods for families with excellent schools and amenities"
+        description="Neighborhoods with nearby schools, parks, and amenities"
         className="bg-warm-gray"
       >
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -119,7 +119,7 @@ export default function CommunitiesPage() {
       >
         <div className="max-w-4xl mx-auto">
           <p className="text-foreground-accent mb-6 text-lg">
-            Las Vegas offers one of the most diverse real estate markets in the Southwest, with communities ranging from luxury guard-gated estates in Summerlin to family-friendly neighborhoods in Henderson, active adult 55+ communities, and new construction master-planned developments. Understanding the different areas and what each offers helps you find the perfect community for your lifestyle, budget, and long-term goals.
+            Las Vegas offers one of the most diverse real estate markets in the Southwest, with communities ranging from luxury guard-gated estates in Summerlin to neighborhoods in Henderson, active adult 55+ communities, and new construction master-planned developments. Understanding the different areas and what each offers helps you find the perfect community for your lifestyle, budget, and long-term goals.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
             <div className="bg-white rounded-xl p-6">
@@ -131,18 +131,18 @@ export default function CommunitiesPage() {
                 <li>Guard-gated security and privacy</li>
                 <li>Golf courses and resort-style amenities</li>
                 <li>Homes from $800K to $10M+</li>
-                <li>Exclusive neighborhoods with prestige</li>
+                <li>Luxury neighborhoods with prestige</li>
               </ul>
             </div>
             <div className="bg-white rounded-xl p-6">
-              <h3 className="text-xl font-bold text-primary mb-3 font-display">Family-Friendly Communities</h3>
+              <h3 className="text-xl font-bold text-primary mb-3 font-display">Communities</h3>
               <p className="text-slate text-sm mb-3">
-                Family-friendly neighborhoods throughout Las Vegas offer excellent schools, parks, and amenities perfect for raising children. These communities typically feature:
+                Neighborhoods throughout Las Vegas offer nearby schools, parks, and amenities. These communities typically feature:
               </p>
               <ul className="list-disc list-inside text-sm text-slate space-y-1">
-                <li>Top-rated schools and educational options</li>
+                <li>Nearby public schools and educational options</li>
                 <li>Parks, playgrounds, and recreational facilities</li>
-                <li>Safe neighborhoods with strong community feel</li>
+                <li>with strong community feel</li>
                 <li>Homes across various price points</li>
               </ul>
             </div>

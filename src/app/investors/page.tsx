@@ -100,7 +100,7 @@ export default function InvestorsPage() {
         <div className="bg-primary/5 rounded-xl p-6 border-l-4 border-gold">
           <h3 className="text-xl font-bold text-primary mb-3 font-display">Investment Market Overview</h3>
           <p className="text-foreground-accent mb-4">
-            Las Vegas real estate investment opportunities span multiple property types and strategies. From single-family rentals in established neighborhoods to multi-family properties, short-term rentals near the Strip, and new construction investments, there are options for every investor profile and risk tolerance.
+            Las Vegas real estate investment opportunities span multiple property types and strategies. From single-family rentals in older neighborhoods to multi-family properties, short-term rentals near the Strip, and new construction investments, there are options for every investor profile and risk tolerance.
           </p>
           <ul className="space-y-2 text-foreground-accent">
             <li className="flex items-start">
@@ -143,7 +143,7 @@ export default function InvestorsPage() {
               appreciation. This is the most common strategy for building wealth through real estate. Ideal for:
             </p>
             <ul className="list-disc list-inside text-sm text-foreground-accent space-y-1 mb-3">
-              <li>Single-family homes in established neighborhoods with strong rental demand</li>
+              <li>Single-family homes in older neighborhoods with strong rental demand</li>
               <li>Multi-family properties (duplexes, triplexes, fourplexes) for higher cash flow</li>
               <li>Properties near employment centers, universities, or growing areas</li>
               <li>Investors seeking passive income and long-term wealth building</li>

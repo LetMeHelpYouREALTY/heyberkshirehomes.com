@@ -221,7 +221,7 @@ export default async function CommunityPage({
               About {community.name} - Las Vegas Real Estate
             </h2>
             <p className="text-lg text-slate text-center mb-6">
-              {community.name} is one of Las Vegas's premier communities, offering residents a unique combination of location, amenities, and lifestyle. Whether you're seeking luxury living, family-friendly neighborhoods, or active adult communities, {community.name} has something special to offer for every type of homebuyer.
+              {community.name} is one of Las Vegas's premier communities, offering residents an unique combination of location, amenities, and lifestyle. Whether you're seeking luxury living, neighborhoods, or active adult communities, {community.name} has something special to offer for every type of homebuyer.
             </p>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
@@ -235,7 +235,7 @@ export default async function CommunityPage({
                 </p>
                 <p className="text-slate mb-4">
                   {community.name} offers a unique lifestyle in the heart of Las
-                  Vegas. Whether you're seeking luxury living, family-friendly
+                  Vegas. Whether you're seeking luxury living, parks and
                   amenities, or active adult communities, this area has
                   something special to offer. The community has established itself as a desirable location for homeowners who value quality, convenience, and a strong sense of community.
                 </p>

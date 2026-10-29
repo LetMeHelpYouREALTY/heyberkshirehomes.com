@@ -10,7 +10,7 @@ import { generateBreadcrumbSchema } from '@/lib/schema';
 
 export const metadata = {
   title: 'Luxury Homes Las Vegas | $800K-$10M+ Estates | Dr. Jan Duffy',
-  description: 'Discover luxury homes in Las Vegas from $800K to $10M+. Exclusive communities including The Ridges, The Summit, and Red Rock Country Club.',
+  description: 'Discover luxury homes in Las Vegas from $800K to $10M+. Communities including The Ridges, The Summit, and Red Rock Country Club.',
 };
 
 const luxuryCommunities = getCommunitiesByCategory('luxury');
@@ -33,7 +33,7 @@ export default function LuxuryHomesPage() {
           </h1>
           <p className="text-xl text-white/90 max-w-3xl">
             Discover exceptional estates from $800K to $10M+ in Las Vegas's most
-            exclusive communities. White-glove service, discretion, and
+            communities. White-glove service, discretion, and
             unparalleled expertise.
           </p>
         </Container>
@@ -43,7 +43,7 @@ export default function LuxuryHomesPage() {
       <Section
         id="overview"
         title="Luxury Real Estate in Las Vegas - Experience the Finest in Luxury Living"
-        description="Discover exceptional estates from $800K to $10M+ in Las Vegas's most exclusive communities"
+        description="Discover exceptional estates from $800K to $10M+ in Las Vegas's luxury communities"
       >
         <div className="max-w-4xl mx-auto prose prose-lg">
           <p className="text-foreground-accent mb-6 text-lg">
@@ -95,7 +95,7 @@ export default function LuxuryHomesPage() {
       <Section
         id="communities"
         title="Featured Luxury Communities"
-        description="Las Vegas's most exclusive neighborhoods"
+        description="Las Vegas's most luxury neighborhoods"
         className="bg-warm-gray"
       >
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

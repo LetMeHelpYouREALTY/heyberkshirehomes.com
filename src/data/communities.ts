@@ -62,7 +62,7 @@ export const communities: Community[] = [
   {
     slug: 'skye-canyon',
     name: 'Skye Canyon',
-    description: 'Master-planned community in Northwest Las Vegas featuring newer construction, family-friendly amenities, and modern home designs.',
+    description: 'Master-planned community in Northwest Las Vegas featuring newer construction, amenities, and modern home designs.',
     priceRange: '$400K - $900K',
     homeStyles: ['Single Family', 'New Construction', 'Modern Designs'],
     yearBuilt: '2015 - Present',
@@ -73,7 +73,7 @@ export const communities: Community[] = [
   {
     slug: 'centennial-hills',
     name: 'Centennial Hills',
-    description: 'Established family-friendly community in Northwest Las Vegas with excellent schools, parks, and convenient shopping.',
+    description: 'Older community in Northwest Las Vegas with nearby public schools, parks, and convenient shopping.',
     priceRange: '$350K - $750K',
     homeStyles: ['Single Family', 'Townhomes'],
     yearBuilt: '2000 - 2015',
@@ -95,7 +95,7 @@ export const communities: Community[] = [
   {
     slug: 'henderson',
     name: 'Henderson',
-    description: 'Overview of Henderson real estate including Green Valley, Anthem, and other desirable neighborhoods. Family-friendly with excellent schools.',
+    description: 'Overview of Henderson real estate including Green Valley, Anthem, and other desirable neighborhoods. with nearby schools.',
     priceRange: '$300K - $2M',
     homeStyles: ['Single Family', 'Luxury Homes', '55+ Communities'],
     yearBuilt: '1980 - Present',
@@ -154,7 +154,7 @@ export const communities: Community[] = [
   {
     slug: 'north-las-vegas',
     name: 'North Las Vegas',
-    description: 'Affordable and growing area with new construction, established neighborhoods, and excellent value for homebuyers.',
+    description: 'Affordable and growing area with new construction, older neighborhoods, and excellent value for homebuyers.',
     priceRange: '$250K - $600K',
     homeStyles: ['Single Family', 'New Construction'],
     yearBuilt: '1990 - Present',

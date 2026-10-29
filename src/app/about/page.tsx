@@ -199,7 +199,7 @@ export default function AboutPage() {
             <h3 className="font-bold mb-3 font-display text-lg">Luxury Homes Las Vegas</h3>
             <p className="text-sm text-foreground-accent mb-3">
               Expertise in high-end properties from $800K to $10M+ in
-              Summerlin's most exclusive communities. I understand the unique needs of luxury buyers and sellers, including discretion, attention to detail, and deep market knowledge.
+              Summerlin's luxury communities. I understand the unique needs of luxury buyers and sellers, including discretion, attention to detail, and deep market knowledge.
             </p>
             <ul className="list-disc list-inside text-sm text-foreground-accent space-y-1">
               <li>The Ridges, The Summit, Red Rock Country Club</li>
