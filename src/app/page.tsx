@@ -1,4 +1,5 @@
 import Hero from '@/components/Hero';
+import FeaturedListing from '@/components/sections/FeaturedListing';
 import ServicesSection from '@/components/ServicesSection';
 import CommunitiesSection from '@/components/CommunitiesSection';
 import RealScoutAdvancedSearch from '@/components/RealScoutAdvancedSearch';
@@ -82,6 +83,12 @@ export default function HomePage() {
       
       {/* 1. Hero - Service-focused CTAs (no stats) - H1 is in Hero component */}
       <Hero />
+      <FeaturedListing
+        phone="(702) 842-1192"
+        phoneHref="tel:+17028421192"
+        siteHost="heyberkshirehomes.com"
+      />
+
 
       {/* Trust indicator */}
       <div className="bg-primary text-white py-3 border-t border-white/10">
