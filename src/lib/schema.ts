@@ -78,11 +78,6 @@ export function generateLocalBusinessSchema(): SchemaMarkup {
       opens: '09:00',
       closes: '18:00',
     },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '5',
-      reviewCount: '50', // Update with actual review count
-    },
   };
 }
 
