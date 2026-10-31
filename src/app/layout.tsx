@@ -40,7 +40,7 @@ export default function RootLayout({
           type="module"
           strategy="lazyOnload"
         />
-        <FUBPixel />
+        {process.env.VERCEL_ENV === "production" && <FUBPixel />}
         {siteDetails.googleAnalyticsId && <GoogleAnalytics gaId={siteDetails.googleAnalyticsId} />}
         <Header />
         <main>
