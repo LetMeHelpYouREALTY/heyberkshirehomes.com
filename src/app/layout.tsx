@@ -10,6 +10,8 @@ import { siteDetails } from '@/data/siteDetails';
 import { rootSiteMetadata } from '@/lib/site-metadata';
 
 import "./globals.css";
+import { Analytics as VercelAnalytics } from "@vercel/analytics/next";
+import { SpeedInsights as VercelSpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({
   subsets: ['latin'],
@@ -47,6 +49,8 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <VercelAnalytics />
+        <VercelSpeedInsights />
       </body>
     </html>
   );
